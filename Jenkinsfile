@@ -11,6 +11,6 @@ stage("Package") {
     withEnv(["MAVEN_OPTS=$mavenOpts"]) {
       sh "mvn package"
     } 
-    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+    archiveArtifacts artifacts: 'target/dropwizard-*SNAPSHOT.jar', fingerprint: true
   }
 }
