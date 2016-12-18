@@ -33,4 +33,5 @@ stage("Package") {
     }
     archiveArtifacts artifacts: 'target/dropwizard-*SNAPSHOT.jar', fingerprint: true
     stash name: 'jar', includes: 'target/dropwizard-*SNAPSHOT.jar'
+  }
 }
