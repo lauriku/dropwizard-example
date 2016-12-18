@@ -1,4 +1,4 @@
-# vim: syntax=groovy
+#!/usr/bin/env groovy
 
 def mavenImage = docker.image("maven:3.3.9-jdk-8")
 
