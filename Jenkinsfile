@@ -7,9 +7,11 @@ mavenImage.pull()
 
 stage("Package") {
   mavenImage.inside {
-    git url: "https://github.com/lauriku/dropwizard-example.git"
-    withEnv(["MAVEN_OPTS=$mavenOpts"]) {
-      sh "mvn package"
-    } 
+    ansiColor {
+      git url: "https://github.com/lauriku/dropwizard-example.git"
+      withEnv(["MAVEN_OPTS=$mavenOpts"]) {
+        sh "mvn package"
+      } 
     }
+  }
 }
