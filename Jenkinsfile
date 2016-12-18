@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def mavenImage = docker.image("maven:3.3.9-jdk-8")
-def mavenOpts = "-Dmaven.repo.local=${env.JENKINS_HOME}/.m2/repository
+def mavenOpts = "-Dmaven.repo.local=${env.JENKINS_HOME}/.m2/repository"
 
 mavenImage.pull()
 
