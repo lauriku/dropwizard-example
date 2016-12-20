@@ -24,3 +24,14 @@ stage("Test") {
     step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/*.xml'])
   }
 }
+
+stage("Package") {
+  mavenImage.inside {
+    unstash 'compiled'
+    withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
+      sh 'mvn package'
+    }
+    archiveArtifacts artifact: 'target/dropwizard-*SNAPSHOT.jar', fingerprint: true
+    stash name: 'jar', includes: 'target/dropwizard-*SNAPSHOT.jar'
+  }
+}
