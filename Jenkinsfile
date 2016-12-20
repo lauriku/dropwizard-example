@@ -11,5 +11,16 @@ stage("Build") {
     withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
       sh 'mvn compile'
     }
+    stash name: 'compiled', includes: '*/**'
+  }
+}
+
+stage("Test") {
+  mavenImage.inside {
+    unstash 'compiled'
+    withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
+      sh 'mvn test'
+    }
+    step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/*.xml'])
   }
 }
