@@ -23,7 +23,7 @@
   {
     "type": "shell",
     "inline": [
-      "sudo apt-get install -y openjdk-8-jre wget curl unzip",
+      "sudo apt-get install -y openjdk-8-jre wget curl zip",
       "sudo mkdir -p /opt/dropwizard-example",
       "sudo chown -R ubuntu:ubuntu /opt/dropwizard-example",
       "wget -O /opt/dropwizard-example/{{ user `artifact` }} https://s3-eu-west-1.amazonaws.com/{{ user `bucket` }}/{{ user `artifact` }}",
