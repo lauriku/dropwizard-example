@@ -34,7 +34,7 @@ start() {
     else
         # Start dropwizard
         echo "Starting ${APPLICATION_NAME}"
-        runuser ${APPLICATION_USER} -c "cd ${APPLICATION_HOME}; ${APPLICATION_CMD} > /dev/null &"
+        sudo -u ${APPLICATION_USER} "cd ${APPLICATION_HOME}; ${APPLICATION_CMD} > /dev/null &"
     fi
     return 0
 }
