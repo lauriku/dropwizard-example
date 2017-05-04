@@ -12,7 +12,7 @@ def mavenOpts = "-Dmaven.repo.local=${env.JENKINS_HOME}/.m2/repository"
 
 stage("Build") {
   mavenImage.inside {
-    git url: 'https://github.com/lauriku/dropwizard-example.git'
+    git url: 'https://github.com/lauriku/dropwizard-example.git', branch: 'aws-training'
     withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
       sh 'mvn compile'
     }
