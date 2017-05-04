@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
 def mavenImage = docker.image("maven:3.3.9-jdk-8")
-def packerImage = docker.image("hashicorp/packer:light")
 def alpineImage = docker.image("alpine")
 
 def artifactBucket = "gofore-aws-training-artifacts"
@@ -8,7 +7,6 @@ def artifactBucket = "gofore-aws-training-artifacts"
 def artifact
 
 mavenImage.pull()
-packerImage.pull()
 
 def mavenOpts = "-Dmaven.repo.local=${env.JENKINS_HOME}/.m2/repository"
 
@@ -53,7 +51,7 @@ stage("Upload package to S3") {
 }
 
 stage("Build new AMI") {
-  packerImage.inside {
+  node {
     unstash 'compiled'
     sh 'packer build basic.json'
   }
