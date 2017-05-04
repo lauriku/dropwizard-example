@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "sgid": "{{ env `SECURITY_GROUP_ID` }}"
+  },
+
+  "builders": [
+  {
+    "type": "amazon-ebs",
+    "region": "eu-west-1",
+    "source_ami": "ami-7adbde1c",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "dropwizard-example-{{timestamp}}",
+    "security_group_id": "{{ user `sgid` }}"
+  }],
+  "provisioners": [
+  {
+    "type": "shell",
+    "inline": [
+      "sudo apt-get update -y"
+    ]
+  },
+  {
+    "type": "shell",
+    "inline": [
+      "sudo apt-get install -y openjdk-8-jre python pip",
+      "sudo pip install awscli",
+      "sudo mkdir -p /opt/dropwizard-example"
+    ]
+  }
+  ]
+}
