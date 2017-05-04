@@ -9,7 +9,7 @@
     "type": "amazon-ebs",
     "region": "eu-west-1",
     "source_ami": "ami-c9e5e0af",
-    "instance_type": "t2.micro",
+    "instance_type": "t2.small",
     "ssh_username": "ubuntu",
     "ami_name": "dropwizard-example-{{timestamp}}"
   }],
@@ -23,11 +23,10 @@
   {
     "type": "shell",
     "inline": [
-      "sudo apt-get install -y openjdk-8-jre python python-pip",
-      "sudo pip install awscli",
+      "sudo apt-get install -y openjdk-8-jre wget curl",
       "sudo mkdir -p /opt/dropwizard-example",
       "sudo chown -R ubuntu:ubuntu /opt/dropwizard-example",
-      "aws s3 cp s3://{{ user `bucket` }}/{{ user `artifact` }} /opt/dropwizard-example",
+      "wget -O /opt/dropwizard-example/{{ user `artifact` }} https://s3-eu-west-1.amazonaws.com/{{ user `bucket` }}/{{ user `artifact` }}",
       "cd /opt/dropwizard-example && unzip {{ user `artifact` }} && mv target/*.jar .",
       "sudo ln -s /opt/dropwizard-example/dropwizard-init-script /etc/init.d/dropwizard-example",
       "sudo update-rc.d dropwizard-example defaults",
