@@ -28,7 +28,12 @@
       "sudo pip install awscli",
       "sudo mkdir -p /opt/dropwizard-example",
       "sudo chown -R ubuntu:ubuntu /opt/dropwizard-example",
-      "aws s3 cp s3://{{ user `bucket` }}/{{ user `artifact` }} /opt/dropwizard-example"
+      "aws s3 cp s3://{{ user `bucket` }}/{{ user `artifact` }} /opt/dropwizard-example",
+      "cd /opt/dropwizard-example && unzip {{ user `artifact` }} && mv target/*.jar .",
+      "sudo ln -s /opt/dropwizard-example/dropwizard-init-script /etc/init.d/dropwizard-example",
+      "sudo update-rc.d dropwizard-example defaults",
+      "sudo update-rc.d dropwizard-example enable",
+      "sudo /etc/init.d/dropwizard-example start"
     ]
   }
   ]
