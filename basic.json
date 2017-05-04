@@ -11,7 +11,8 @@
     "source_ami": "ami-c9e5e0af",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "dropwizard-example-{{timestamp}}"
+    "ami_name": "dropwizard-example-{{timestamp}}",
+    "iam_instance_profile": "jenkins"
   }],
   "provisioners": [
   {

@@ -54,7 +54,7 @@ stage("Build new AMI") {
   node {
     unstash 'compiled'
     withEnv(["ARTIFACT=${artifact}", "BUCKET=${artifactBucket}"]) {
-      sh 'packer build basic.json'
+      sh 'packer build -color=false basic.json'
     }
   }
 }
