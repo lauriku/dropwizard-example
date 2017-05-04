@@ -1,6 +1,6 @@
 {
   "variables": {
-    "artifact": "{{ env `ARTIFACT_NAME` }}",
+    "artifact": "{{ env `ARTIFACT` }}",
     "bucket": "{{ env `BUCKET` }}"
   },
 
