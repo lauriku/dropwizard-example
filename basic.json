@@ -1,6 +1,7 @@
 {
   "variables": {
-    "sgid": "{{ env `SECURITY_GROUP_ID` }}"
+    "artifact": "{{ env `ARTIFACT_NAME` }}",
+    "bucket": "{{ env `BUCKET` }}"
   },
 
   "builders": [
@@ -10,8 +11,7 @@
     "source_ami": "ami-7adbde1c",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "dropwizard-example-{{timestamp}}",
-    "security_group_id": "{{ user `sgid` }}"
+    "ami_name": "dropwizard-example-{{timestamp}}"
   }],
   "provisioners": [
   {
@@ -25,7 +25,9 @@
     "inline": [
       "sudo apt-get install -y openjdk-8-jre python pip",
       "sudo pip install awscli",
-      "sudo mkdir -p /opt/dropwizard-example"
+      "sudo mkdir -p /opt/dropwizard-example",
+      "sudo chown -R ubuntu:ubuntu /opt/dropwizard-example",
+      "aws s3 cp s3://{{ user `bucket` }}/{{ user `artifact` }} /opt/dropwizard-example"
     ]
   }
   ]
