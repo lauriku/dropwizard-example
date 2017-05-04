@@ -10,25 +10,19 @@ mavenImage.pull()
 
 def mavenOpts = "-Dmaven.repo.local=${env.JENKINS_HOME}/.m2/repository"
 
-stage("Clone Repo") {
-  mavenImage.inside {
-    git url: 'https://github.com/lauriku/dropwizard-example.git', branch: 'aws-training'
-  }
-  stash name: 'source', includes: '*'
-}
-
 stage("Build") {
   mavenImage.inside {
-    unstash 'source'
+    git url: 'https://github.com/lauriku/dropwizard-example.git', branch: 'aws-training'
     withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
       sh 'mvn compile'
     }
+    stash name: 'compiled', includes: '*/**'
   }
 }
 
 stage("Test") {
   mavenImage.inside {
-    unstash 'source'
+    unstash 'compiled'
     withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
       sh 'mvn test'
     }
@@ -38,9 +32,9 @@ stage("Test") {
 
 stage("Package") {
   mavenImage.inside {
-    unstash 'source'
+    unstash 'compiled'
     withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
-      sh 'mvn -Dmaven.test.skip=true package'
+      sh 'mvn package'
     }
     archiveArtifacts artifacts: 'target/dropwizard-*SNAPSHOT.jar', fingerprint: true
     stash name: 'package', includes: 'target/dropwizard-*SNAPSHOT.jar, example.yml, dropwizard-init-script'
