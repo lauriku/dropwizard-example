@@ -34,7 +34,7 @@ stage("Package") {
   mavenImage.inside {
     unstash 'compiled'
     withEnv(["MAVEN_OPTS=${mavenOpts}"]) {
-      sh 'mvn package'
+      sh 'mvn -Dmaven.test.skip=true package'
     }
     archiveArtifacts artifacts: 'target/dropwizard-*SNAPSHOT.jar', fingerprint: true
     stash name: 'package', includes: 'target/dropwizard-*SNAPSHOT.jar, example.yml, dropwizard-init-script'
