@@ -31,6 +31,7 @@
       "sudo ln -s /opt/dropwizard-example/dropwizard-init-script /etc/init.d/dropwizard-example",
       "sudo update-rc.d dropwizard-example defaults",
       "sudo update-rc.d dropwizard-example enable",
+      "sudo chmod +x /etc/init.d/dropwizard-example",
       "sudo /etc/init.d/dropwizard-example start"
     ]
   }
