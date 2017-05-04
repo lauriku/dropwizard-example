@@ -53,6 +53,8 @@ stage("Upload package to S3") {
 stage("Build new AMI") {
   node {
     unstash 'compiled'
-    sh 'packer build basic.json'
+    withEnv(["ARTIFACT=${artifact}", "BUCKET=${artifactBucket}"]) {
+      sh 'packer build basic.json'
+    }
   }
 }
