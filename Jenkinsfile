@@ -46,7 +46,7 @@ stage("Upload package to S3") {
     unstash 'package'
     artifact = "${env.JOB_NAME}-${env.BUILD_NUMBER}.zip"
     sh "zip -rq ${artifact} ."
-    sh "aws s3 cp ${artifact} s3://${artifactBucket}/"
+    sh "aws s3 cp --acl public-read ${artifact} s3://${artifactBucket}/"
   }
 }
 
