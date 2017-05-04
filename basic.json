@@ -8,7 +8,7 @@
   {
     "type": "amazon-ebs",
     "region": "eu-west-1",
-    "source_ami": "ami-7adbde1c",
+    "source_ami": "ami-c9e5e0af",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
     "ami_name": "dropwizard-example-{{timestamp}}"
@@ -23,7 +23,7 @@
   {
     "type": "shell",
     "inline": [
-      "sudo apt-get install -y openjdk-8-jre python pip",
+      "sudo apt-get install -y openjdk-8-jre python python-pip",
       "sudo pip install awscli",
       "sudo mkdir -p /opt/dropwizard-example",
       "sudo chown -R ubuntu:ubuntu /opt/dropwizard-example",
