@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 def mavenImage = docker.image("maven:3.3.9-jdk-8")
 def packerImage = docker.image("hashicorp/packer:light")
+def alpineImage = docker.image("alpine")
 
 def artifactBucket = "gofore-aws-training-artifacts"
 
 def artifact
-def commit
 
 mavenImage.pull()
 packerImage.pull()
