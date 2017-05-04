@@ -46,7 +46,7 @@ stage("Package") {
 stage("Upload package to S3") {
   node {
     unstash 'package'
-    artifact = "${env.PROJECT_NAME}-${env.BUILD_NUMBER}.zip"
+    artifact = "${env.JOB_NAME}-${env.BUILD_NUMBER}.zip"
     sh "zip -rq ${artifact} ."
     sh "aws s3 cp ${artifact} s3://${artifactBucket}/"
   }
