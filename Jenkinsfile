@@ -55,6 +55,6 @@ stage("Upload package to S3") {
 stage("Build new AMI") {
   packerImage.inside {
     unstash 'compiled'
-    sh 'packer build'
+    sh 'packer build basic.json'
   }
 }
