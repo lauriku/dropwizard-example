@@ -85,8 +85,8 @@ stage("Increase autoscaling group instances from 1 to 2") {
 }
 
 stage("Wait for new instance to become healthy in ELB") {
-  unstash 'compiled'
   botoImage.inside {
+    unstash 'compiled'
     sh "python waiter.py ${autoScalingGroupName}"
   }
 }
