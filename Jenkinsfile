@@ -57,15 +57,14 @@ stage("Build new AMI") {
     withEnv(["ARTIFACT=${artifact}", "BUCKET=${artifactBucket}"]) {
       sh 'packer build -machine-readable basic.json | tee build.log'
     }
-    stash name: 'deploy', includes: 'build.log, lc_template.json'
+    sh("grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2 > ami_id.txt") 
+    stash name: 'deploy', includes: 'ami_id.txt, lc_template.json'
   }
 }
 
 stage("Create new launch config") {
   node {
     unstash 'deploy'
-    def amiId = sh(returnOutput: true, script: "grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2")   
-    sh "echo ${amiId}"
-    sh "aws autoscaling create-launch-configuration --cli-input-json file://lc_template.json --launch-configuration-name ${env.JOB_NAME}-${env.BUILD_NUMBER} --image-id ${amiId}"
+    sh "aws autoscaling create-launch-configuration --cli-input-json file://lc_template.json --launch-configuration-name ${env.JOB_NAME}-${env.BUILD_NUMBER} --image-id $(cat ami_id.txt)"
   }
 }
