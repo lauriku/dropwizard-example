@@ -3,6 +3,7 @@ def mavenImage = docker.image("maven:3.3.9-jdk-8")
 def alpineImage = docker.image("alpine")
 
 def artifactBucket = "gofore-aws-training-artifacts"
+def autoScalingGroupName = "dropwizard-example-asg"
 
 def artifact
 
@@ -66,5 +67,17 @@ stage("Create new launch config") {
   node {
     unstash 'deploy'
     sh "aws autoscaling create-launch-configuration --cli-input-json file://lc_template.json --launch-configuration-name ${env.JOB_NAME}-${env.BUILD_NUMBER} --image-id `cat ami_id.txt`"
+  }
+}
+
+stage("Update Autoscaling group to use the new config") {
+  node {
+    sh "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${autoScalingGroupName} --launch-configuration ${env.JOB_NAME}-${env.BUILD_NUMBER}"
+  }
+}
+
+stage("Increase autoscaling group instances from 1 to 2") {
+  node {
+    sh "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${autoScalingGroupName} --desired-capacity 2"
   }
 }
