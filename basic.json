@@ -9,7 +9,7 @@
     "type": "amazon-ebs",
     "region": "eu-west-1",
     "source_ami": "ami-a8d2d7ce",
-    "instance_type": "t2.small",
+    "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
     "ami_name": "dropwizard-example-{{timestamp}}"
   }],
