@@ -5,7 +5,6 @@ def alpineImage = docker.image("alpine")
 def artifactBucket = "gofore-aws-training-artifacts"
 
 def artifact
-amiId = ""
 
 mavenImage.pull()
 
@@ -57,13 +56,16 @@ stage("Build new AMI") {
     artifact = "${env.JOB_NAME}-${env.BUILD_NUMBER}.zip"
     withEnv(["ARTIFACT=${artifact}", "BUCKET=${artifactBucket}"]) {
       sh 'packer build -machine-readable basic.json | tee build.log'
-      amiId = sh(returnOutput: true, script: "grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2")   
     }
+    stash name: 'deploy', includes: 'build.log, lc_template.json'
   }
 }
 
 stage("Create new launch config") {
   node {
+    unstash 'deploy'
+    def amiId = sh(returnOutput: true, script: "grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2")   
     sh "echo ${amiId}"
+    sh "aws autoscaling create-launch-configuration --cli-input-json file://lc_template.json --launch-configuration-name ${env.JOB_NAME}-${env.BUILD_NUMBER} --image-id ${amiId}"
   }
 }
