@@ -75,12 +75,14 @@ stage("Create new launch config") {
 stage("Update Autoscaling group to use the new config") {
   node {
     sh "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${autoScalingGroupName} --launch-configuration ${env.JOB_NAME}-${env.BUILD_NUMBER}"
+    sleep 5
   }
 }
 
 stage("Increase autoscaling group instances from 1 to 2") {
   node {
     sh "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${autoScalingGroupName} --desired-capacity 2"
+    sleep 30
   }
 }
 
