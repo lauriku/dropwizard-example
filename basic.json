@@ -8,7 +8,7 @@
   {
     "type": "amazon-ebs",
     "region": "eu-west-1",
-    "source_ami": "ami-c9e5e0af",
+    "source_ami": "ami-a8d2d7ce",
     "instance_type": "t2.small",
     "ssh_username": "ubuntu",
     "ami_name": "dropwizard-example-{{timestamp}}"
@@ -27,11 +27,12 @@
       "sudo mkdir -p /opt/dropwizard-example",
       "sudo chown -R ubuntu:ubuntu /opt/dropwizard-example",
       "wget -O /opt/dropwizard-example/{{ user `artifact` }} https://s3-eu-west-1.amazonaws.com/{{ user `bucket` }}/{{ user `artifact` }}",
-      "cd /opt/dropwizard-example && unzip {{ user `artifact` }} && mv target/*.jar .",
+      "cd /opt/dropwizard-example && unzip {{ user `artifact` }} && mv target/*.jar dropwizard-example.jar",
       "sudo ln -s /opt/dropwizard-example/dropwizard-init-script /etc/init.d/dropwizard-example",
+      "sudo chmod +x /etc/init.d/dropwizard-example",
       "sudo update-rc.d dropwizard-example defaults",
       "sudo update-rc.d dropwizard-example enable",
-      "sudo chmod +x /etc/init.d/dropwizard-example",
+      "sudo /etc/init.d/dropwizard-example migrate",
       "sudo /etc/init.d/dropwizard-example start"
     ]
   }
