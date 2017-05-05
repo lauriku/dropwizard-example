@@ -56,7 +56,7 @@ stage("Build new AMI") {
     unstash 'compiled'
     artifact = "${env.JOB_NAME}-${env.BUILD_NUMBER}.zip"
     withEnv(["ARTIFACT=${artifact}", "BUCKET=${artifactBucket}"]) {
-      sh 'packer build -color=false basic.json | tee build.log'
+      sh 'packer build -machine-readable basic.json | tee build.log'
       amiId = sh(returnOutput: true, script: "grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2")   
     }
   }
