@@ -5,7 +5,7 @@ def alpineImage = docker.image("alpine")
 def artifactBucket = "gofore-aws-training-artifacts"
 
 def artifact
-amiId
+amiId = ""
 
 mavenImage.pull()
 
