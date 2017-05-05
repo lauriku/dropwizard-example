@@ -65,6 +65,6 @@ stage("Build new AMI") {
 stage("Create new launch config") {
   node {
     unstash 'deploy'
-    sh "aws autoscaling create-launch-configuration --cli-input-json file://lc_template.json --launch-configuration-name ${env.JOB_NAME}-${env.BUILD_NUMBER} --image-id $(cat ami_id.txt)"
+    sh "aws autoscaling create-launch-configuration --cli-input-json file://lc_template.json --launch-configuration-name ${env.JOB_NAME}-${env.BUILD_NUMBER} --image-id `cat ami_id.txt`)"
   }
 }
