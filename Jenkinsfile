@@ -1,9 +1,11 @@
 #!/usr/bin/env groovy
 def mavenImage = docker.image("maven:3.3.9-jdk-8")
 def alpineImage = docker.image("alpine")
+def botoImage = docker.image("lauriku/docker-boto3")
 
 def artifactBucket = "gofore-aws-training-artifacts"
 def autoScalingGroupName = "dropwizard-example-asg"
+def loadBalancerName = "dropwizard-example-elb"
 
 def artifact
 
@@ -79,5 +81,18 @@ stage("Update Autoscaling group to use the new config") {
 stage("Increase autoscaling group instances from 1 to 2") {
   node {
     sh "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${autoScalingGroupName} --desired-capacity 2"
+  }
+}
+
+stage("Wait for new instance to become healthy in ELB") {
+  unstash 'compiled'
+  botoImage.inside {
+    sh "python waiter.py ${autoScalingGroupName}"
+  }
+}
+
+stage("Decrease autoscaling group instances from 2 to 1") {
+  node {
+    sh "aws autoscaling update-auto-scaling-group --auto-scaling-group-name ${autoScalingGroupName} --desired-capacity 1"
   }
 }
