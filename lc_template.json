@@ -1,7 +1,7 @@
 {
     "KeyName": "lauriku-aws-demo", 
     "SecurityGroups": [
-        "sg-38255741"
+        "sg-55ceb72c"
     ], 
     "UserData": "", 
     "InstanceType": "t2.micro", 
@@ -19,6 +19,6 @@
         "Enabled": true
     }, 
     "IamInstanceProfile": "gof-ec2-read", 
-    "EbsOptimized": true, 
+    "EbsOptimized": false, 
     "AssociatePublicIpAddress": true
 }
