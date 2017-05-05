@@ -1,0 +1,24 @@
+{
+    "KeyName": "lauriku-aws-demo", 
+    "SecurityGroups": [
+        "sg-55ceb72c"
+    ], 
+    "UserData": "", 
+    "InstanceType": "t2.micro", 
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "/dev/sda1", 
+            "Ebs": {
+                "VolumeSize": 8, 
+                "VolumeType": "gp2", 
+                "DeleteOnTermination": true
+            } 
+        }
+    ], 
+    "InstanceMonitoring": {
+        "Enabled": true
+    }, 
+    "IamInstanceProfile": "gof-ec2-read", 
+    "EbsOptimized": false, 
+    "AssociatePublicIpAddress": true
+}

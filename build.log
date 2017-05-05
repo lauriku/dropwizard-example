@@ -1,0 +1,1442 @@
+1493958483,,ui,say,==> amazon-ebs: Prevalidating AMI Name...
+1493958485,,ui,message,    amazon-ebs: Found Image ID: ami-c9e5e0af
+1493958485,,ui,say,==> amazon-ebs: Creating temporary keypair: packer_590bff53-09ac-d169-9579-ad3184e79451
+1493958485,,ui,say,==> amazon-ebs: Creating temporary security group for this instance...
+1493958485,,ui,say,==> amazon-ebs: Authorizing access to port 22 the temporary security group...
+1493958485,,ui,say,==> amazon-ebs: Launching a source AWS instance...
+1493958486,,ui,message,    amazon-ebs: Instance ID: i-00d5f5326727ebf31
+1493958486,,ui,say,==> amazon-ebs: Waiting for instance (i-00d5f5326727ebf31) to become ready...
+1493958506,,ui,say,==> amazon-ebs: Adding tags to source instance
+1493958506,,ui,message,    amazon-ebs: Adding tag: "Name": "Packer Builder"
+1493958506,,ui,say,==> amazon-ebs: Waiting for SSH to become available...
+1493958527,,ui,say,==> amazon-ebs: Connected to SSH!
+1493958527,,ui,say,==> amazon-ebs: Provisioning with shell script: /var/folders/ch/xmt1j7bn2219fp1mncc_p4q9k3pl86/T/packer-shell371647978
+1493958528,,ui,message,    amazon-ebs: Hit:1 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety InRelease
+1493958528,,ui,message,    amazon-ebs: Get:2 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates InRelease [102 kB]
+1493958528,,ui,message,    amazon-ebs: Get:3 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports InRelease [102 kB]
+1493958528,,ui,message,    amazon-ebs: Get:4 http://security.ubuntu.com/ubuntu yakkety-security InRelease [102 kB]
+1493958528,,ui,message,    amazon-ebs: Get:5 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main Sources [903 kB]
+1493958528,,ui,message,    amazon-ebs: Get:6 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/multiverse Sources [181 kB]
+1493958528,,ui,message,    amazon-ebs: Get:7 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/restricted Sources [5%!(PACKER_COMMA)376 B]
+1493958528,,ui,message,    amazon-ebs: Get:8 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/universe Sources [8%!(PACKER_COMMA)044 kB]
+1493958528,,ui,message,    amazon-ebs: Get:9 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/universe amd64 Packages [7%!(PACKER_COMMA)729 kB]
+1493958529,,ui,message,    amazon-ebs: Get:10 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/universe Translation-en [4%!(PACKER_COMMA)484 kB]
+1493958529,,ui,message,    amazon-ebs: Get:11 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/multiverse amd64 Packages [146 kB]
+1493958529,,ui,message,    amazon-ebs: Get:12 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/multiverse Translation-en [108 kB]
+1493958529,,ui,message,    amazon-ebs: Get:13 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/universe Sources [53.7 kB]
+1493958529,,ui,message,    amazon-ebs: Get:14 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/restricted Sources [2%!(PACKER_COMMA)688 B]
+1493958529,,ui,message,    amazon-ebs: Get:15 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main Sources [100 kB]
+1493958529,,ui,message,    amazon-ebs: Get:16 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/multiverse Sources [2%!(PACKER_COMMA)744 B]
+1493958529,,ui,message,    amazon-ebs: Get:17 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 Packages [254 kB]
+1493958529,,ui,message,    amazon-ebs: Get:18 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main Translation-en [115 kB]
+1493958529,,ui,message,    amazon-ebs: Get:19 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/restricted amd64 Packages [7%!(PACKER_COMMA)020 B]
+1493958529,,ui,message,    amazon-ebs: Get:20 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/restricted Translation-en [2%!(PACKER_COMMA)360 B]
+1493958529,,ui,message,    amazon-ebs: Get:21 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/universe amd64 Packages [153 kB]
+1493958529,,ui,message,    amazon-ebs: Get:22 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/universe Translation-en [82.5 kB]
+1493958529,,ui,message,    amazon-ebs: Get:23 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/multiverse amd64 Packages [4%!(PACKER_COMMA)612 B]
+1493958529,,ui,message,    amazon-ebs: Get:24 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/multiverse Translation-en [2%!(PACKER_COMMA)252 B]
+1493958529,,ui,message,    amazon-ebs: Get:25 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports/main Sources [2%!(PACKER_COMMA)476 B]
+1493958529,,ui,message,    amazon-ebs: Get:26 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports/universe Sources [1%!(PACKER_COMMA)012 B]
+1493958529,,ui,message,    amazon-ebs: Get:27 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports/main amd64 Packages [3%!(PACKER_COMMA)500 B]
+1493958529,,ui,message,    amazon-ebs: Get:28 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports/main Translation-en [2%!(PACKER_COMMA)036 B]
+1493958529,,ui,message,    amazon-ebs: Get:29 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports/universe amd64 Packages [1%!(PACKER_COMMA)560 B]
+1493958529,,ui,message,    amazon-ebs: Get:30 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-backports/universe Translation-en [632 B]
+1493958529,,ui,message,    amazon-ebs: Get:31 http://security.ubuntu.com/ubuntu yakkety-security/multiverse Sources [1%!(PACKER_COMMA)144 B]
+1493958529,,ui,message,    amazon-ebs: Get:32 http://security.ubuntu.com/ubuntu yakkety-security/restricted Sources [2%!(PACKER_COMMA)292 B]
+1493958529,,ui,message,    amazon-ebs: Get:33 http://security.ubuntu.com/ubuntu yakkety-security/universe Sources [19.0 kB]
+1493958529,,ui,message,    amazon-ebs: Get:34 http://security.ubuntu.com/ubuntu yakkety-security/main Sources [42.7 kB]
+1493958529,,ui,message,    amazon-ebs: Get:35 http://security.ubuntu.com/ubuntu yakkety-security/main amd64 Packages [138 kB]
+1493958530,,ui,message,    amazon-ebs: Get:36 http://security.ubuntu.com/ubuntu yakkety-security/main Translation-en [60.2 kB]
+1493958530,,ui,message,    amazon-ebs: Get:37 http://security.ubuntu.com/ubuntu yakkety-security/universe amd64 Packages [64.8 kB]
+1493958530,,ui,message,    amazon-ebs: Get:38 http://security.ubuntu.com/ubuntu yakkety-security/universe Translation-en [40.0 kB]
+1493958530,,ui,message,    amazon-ebs: Get:39 http://security.ubuntu.com/ubuntu yakkety-security/multiverse amd64 Packages [2%!(PACKER_COMMA)832 B]
+1493958530,,ui,message,    amazon-ebs: Get:40 http://security.ubuntu.com/ubuntu yakkety-security/multiverse Translation-en [1%!(PACKER_COMMA)268 B]
+1493958534,,ui,message,    amazon-ebs: Fetched 23.1 MB in 4s (5%!(PACKER_COMMA)453 kB/s)
+1493958535,,ui,message,    amazon-ebs: Reading package lists...
+1493958535,,ui,say,==> amazon-ebs: Provisioning with shell script: /var/folders/ch/xmt1j7bn2219fp1mncc_p4q9k3pl86/T/packer-shell004802963
+1493958536,,ui,message,    amazon-ebs: Reading package lists...
+1493958536,,ui,message,    amazon-ebs: Building dependency tree...
+1493958536,,ui,message,    amazon-ebs: Reading state information...
+1493958536,,ui,message,    amazon-ebs: wget is already the newest version (1.18-2ubuntu1).
+1493958536,,ui,message,    amazon-ebs: curl is already the newest version (7.50.1-1ubuntu1.1).
+1493958536,,ui,message,    amazon-ebs: The following additional packages will be installed:
+1493958536,,ui,message,    amazon-ebs: adwaita-icon-theme ca-certificates-java dbus-x11 fontconfig
+1493958536,,ui,message,    amazon-ebs: fontconfig-config fonts-dejavu-core fonts-dejavu-extra gconf-service
+1493958536,,ui,message,    amazon-ebs: gconf-service-backend gconf2 gconf2-common gtk-update-icon-cache
+1493958536,,ui,message,    amazon-ebs: hicolor-icon-theme humanity-icon-theme java-common libasound2
+1493958536,,ui,message,    amazon-ebs: libasound2-data libasyncns0 libatk1.0-0 libatk1.0-data libavahi-client3
+1493958536,,ui,message,    amazon-ebs: libavahi-common-data libavahi-common3 libavahi-glib1 libbonobo2-0
+1493958536,,ui,message,    amazon-ebs: libbonobo2-common libcairo2 libcanberra0 libcroco3 libcups2 libdatrie1
+1493958536,,ui,message,    amazon-ebs: libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libflac8
+1493958536,,ui,message,    amazon-ebs: libfontconfig1 libgail-common libgail18 libgconf-2-4 libgdk-pixbuf2.0-0
+1493958536,,ui,message,    amazon-ebs: libgdk-pixbuf2.0-common libgif7 libgl1-mesa-dri libgl1-mesa-glx
+1493958536,,ui,message,    amazon-ebs: libglapi-mesa libgnome-2-0 libgnome2-common libgnomevfs2-0
+1493958536,,ui,message,    amazon-ebs: libgnomevfs2-common libgraphite2-3 libgtk2.0-0 libgtk2.0-bin
+1493958536,,ui,message,    amazon-ebs: libgtk2.0-common libharfbuzz0b libjbig0 libjpeg-turbo8 libjpeg8 liblcms2-2
+1493958536,,ui,message,    amazon-ebs: libllvm3.8 libltdl7 libnspr4 libnss3 libogg0 liborbit-2-0 libpango-1.0-0
+1493958536,,ui,message,    amazon-ebs: libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0 libpcsclite1
+1493958536,,ui,message,    amazon-ebs: libpixman-1-0 libpulse0 librsvg2-2 librsvg2-common libsndfile1 libtdb1
+1493958536,,ui,message,    amazon-ebs: libthai-data libthai0 libtiff5 libtxc-dxtn-s2tc0 libvorbis0a libvorbisenc2
+1493958536,,ui,message,    amazon-ebs: libvorbisfile3 libx11-xcb1 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0
+1493958536,,ui,message,    amazon-ebs: libxcb-present0 libxcb-render0 libxcb-shm0 libxcb-sync1 libxcomposite1
+1493958536,,ui,message,    amazon-ebs: libxcursor1 libxdamage1 libxfixes3 libxi6 libxinerama1 libxrandr2
+1493958536,,ui,message,    amazon-ebs: libxrender1 libxshmfence1 libxtst6 libxxf86vm1 openjdk-8-jre-headless
+1493958536,,ui,message,    amazon-ebs: sound-theme-freedesktop ubuntu-mono unzip x11-common
+1493958536,,ui,message,    amazon-ebs: Suggested packages:
+1493958536,,ui,message,    amazon-ebs: gconf-defaults-service default-jre libasound2-plugins alsa-utils
+1493958536,,ui,message,    amazon-ebs: libbonobo2-bin libcanberra-gtk0 libcanberra-pulse cups-common desktop-base
+1493958536,,ui,message,    amazon-ebs: libgnomevfs2-bin libgnomevfs2-extra gamin | fam gnome-mime-data gvfs
+1493958536,,ui,message,    amazon-ebs: liblcms2-utils pcscd pulseaudio librsvg2-bin icedtea-8-plugin
+1493958536,,ui,message,    amazon-ebs: openjdk-8-jre-jamvm libnss-mdns fonts-ipafont-gothic fonts-ipafont-mincho
+1493958536,,ui,message,    amazon-ebs: ttf-wqy-microhei | ttf-wqy-zenhei fonts-indic
+1493958536,,ui,message,    amazon-ebs: The following NEW packages will be installed:
+1493958536,,ui,message,    amazon-ebs: adwaita-icon-theme ca-certificates-java dbus-x11 fontconfig
+1493958536,,ui,message,    amazon-ebs: fontconfig-config fonts-dejavu-core fonts-dejavu-extra gconf-service
+1493958536,,ui,message,    amazon-ebs: gconf-service-backend gconf2 gconf2-common gtk-update-icon-cache
+1493958536,,ui,message,    amazon-ebs: hicolor-icon-theme humanity-icon-theme java-common libasound2
+1493958536,,ui,message,    amazon-ebs: libasound2-data libasyncns0 libatk1.0-0 libatk1.0-data libavahi-client3
+1493958536,,ui,message,    amazon-ebs: libavahi-common-data libavahi-common3 libavahi-glib1 libbonobo2-0
+1493958536,,ui,message,    amazon-ebs: libbonobo2-common libcairo2 libcanberra0 libcroco3 libcups2 libdatrie1
+1493958536,,ui,message,    amazon-ebs: libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libflac8
+1493958536,,ui,message,    amazon-ebs: libfontconfig1 libgail-common libgail18 libgconf-2-4 libgdk-pixbuf2.0-0
+1493958536,,ui,message,    amazon-ebs: libgdk-pixbuf2.0-common libgif7 libgl1-mesa-dri libgl1-mesa-glx
+1493958536,,ui,message,    amazon-ebs: libglapi-mesa libgnome-2-0 libgnome2-common libgnomevfs2-0
+1493958536,,ui,message,    amazon-ebs: libgnomevfs2-common libgraphite2-3 libgtk2.0-0 libgtk2.0-bin
+1493958536,,ui,message,    amazon-ebs: libgtk2.0-common libharfbuzz0b libjbig0 libjpeg-turbo8 libjpeg8 liblcms2-2
+1493958536,,ui,message,    amazon-ebs: libllvm3.8 libltdl7 libnspr4 libnss3 libogg0 liborbit-2-0 libpango-1.0-0
+1493958536,,ui,message,    amazon-ebs: libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0 libpcsclite1
+1493958536,,ui,message,    amazon-ebs: libpixman-1-0 libpulse0 librsvg2-2 librsvg2-common libsndfile1 libtdb1
+1493958536,,ui,message,    amazon-ebs: libthai-data libthai0 libtiff5 libtxc-dxtn-s2tc0 libvorbis0a libvorbisenc2
+1493958536,,ui,message,    amazon-ebs: libvorbisfile3 libx11-xcb1 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0
+1493958536,,ui,message,    amazon-ebs: libxcb-present0 libxcb-render0 libxcb-shm0 libxcb-sync1 libxcomposite1
+1493958536,,ui,message,    amazon-ebs: libxcursor1 libxdamage1 libxfixes3 libxi6 libxinerama1 libxrandr2
+1493958536,,ui,message,    amazon-ebs: libxrender1 libxshmfence1 libxtst6 libxxf86vm1 openjdk-8-jre
+1493958536,,ui,message,    amazon-ebs: openjdk-8-jre-headless sound-theme-freedesktop ubuntu-mono unzip x11-common
+1493958536,,ui,message,    amazon-ebs: zip
+1493958536,,ui,message,    amazon-ebs: 0 upgraded%!(PACKER_COMMA) 109 newly installed%!(PACKER_COMMA) 0 to remove and 39 not upgraded.
+1493958536,,ui,message,    amazon-ebs: Need to get 59.9 MB of archives.
+1493958536,,ui,message,    amazon-ebs: After this operation%!(PACKER_COMMA) 342 MB of additional disk space will be used.
+1493958536,,ui,message,    amazon-ebs: Get:1 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 fonts-dejavu-core all 2.37-1 [1%!(PACKER_COMMA)041 kB]
+1493958536,,ui,message,    amazon-ebs: Get:2 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 fontconfig-config all 2.11.94-0ubuntu2 [49.9 kB]
+1493958536,,ui,message,    amazon-ebs: Get:3 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libfontconfig1 amd64 2.11.94-0ubuntu2 [131 kB]
+1493958536,,ui,message,    amazon-ebs: Get:4 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 fontconfig amd64 2.11.94-0ubuntu2 [177 kB]
+1493958536,,ui,message,    amazon-ebs: Get:5 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libbonobo2-common all 2.32.1-3 [34.7 kB]
+1493958536,,ui,message,    amazon-ebs: Get:6 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 liborbit-2-0 amd64 1:2.14.19-1build2 [140 kB]
+1493958536,,ui,message,    amazon-ebs: Get:7 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libbonobo2-0 amd64 2.32.1-3 [211 kB]
+1493958536,,ui,message,    amazon-ebs: Get:8 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libjpeg-turbo8 amd64 1.5.0-0ubuntu1 [113 kB]
+1493958536,,ui,message,    amazon-ebs: Get:9 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libogg0 amd64 1.3.2-1 [17.2 kB]
+1493958536,,ui,message,    amazon-ebs: Get:10 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcomposite1 amd64 1:0.4.4-1 [7%!(PACKER_COMMA)714 B]
+1493958536,,ui,message,    amazon-ebs: Get:11 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxfixes3 amd64 1:5.0.2-1 [10.8 kB]
+1493958536,,ui,message,    amazon-ebs: Get:12 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxrender1 amd64 1:0.9.9-2 [18.4 kB]
+1493958536,,ui,message,    amazon-ebs: Get:13 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcursor1 amd64 1:1.1.14-1 [22.8 kB]
+1493958536,,ui,message,    amazon-ebs: Get:14 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxdamage1 amd64 1:1.1.4-2 [6%!(PACKER_COMMA)946 B]
+1493958536,,ui,message,    amazon-ebs: Get:15 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxinerama1 amd64 2:1.1.3-1 [7%!(PACKER_COMMA)908 B]
+1493958536,,ui,message,    amazon-ebs: Get:16 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxshmfence1 amd64 1.2-1 [5%!(PACKER_COMMA)042 B]
+1493958536,,ui,message,    amazon-ebs: Get:17 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 x11-common all 1:7.7+13ubuntu4 [22.2 kB]
+1493958536,,ui,message,    amazon-ebs: Get:18 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxtst6 amd64 2:1.2.2-1 [14.1 kB]
+1493958536,,ui,message,    amazon-ebs: Get:19 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxxf86vm1 amd64 1:1.1.4-1 [10.6 kB]
+1493958536,,ui,message,    amazon-ebs: Get:20 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libnspr4 amd64 2:4.13.1-0ubuntu0.16.10.1 [112 kB]
+1493958536,,ui,message,    amazon-ebs: Get:21 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libnss3 amd64 2:3.28.4-0ubuntu0.16.10.1 [1%!(PACKER_COMMA)142 kB]
+1493958536,,ui,message,    amazon-ebs: Get:22 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 ca-certificates-java all 20160321 [12.9 kB]
+1493958536,,ui,message,    amazon-ebs: Get:23 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 java-common all 0.57ubuntu1 [7%!(PACKER_COMMA)492 B]
+1493958536,,ui,message,    amazon-ebs: Get:24 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libavahi-common-data amd64 0.6.32-1ubuntu1 [22.0 kB]
+1493958536,,ui,message,    amazon-ebs: Get:25 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libavahi-common3 amd64 0.6.32-1ubuntu1 [21.6 kB]
+1493958536,,ui,message,    amazon-ebs: Get:26 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libavahi-client3 amd64 0.6.32-1ubuntu1 [25.1 kB]
+1493958536,,ui,message,    amazon-ebs: Get:27 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libcups2 amd64 2.2.0-2 [203 kB]
+1493958536,,ui,message,    amazon-ebs: Get:28 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 liblcms2-2 amd64 2.7-1ubuntu1 [137 kB]
+1493958536,,ui,message,    amazon-ebs: Get:29 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2%!(PACKER_COMMA)194 B]
+1493958536,,ui,message,    amazon-ebs: Get:30 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libpcsclite1 amd64 1.8.14-1ubuntu1.16.10.1 [21.4 kB]
+1493958536,,ui,message,    amazon-ebs: Get:31 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxi6 amd64 2:1.7.6-1 [28.6 kB]
+1493958536,,ui,message,    amazon-ebs: Get:32 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 openjdk-8-jre-headless amd64 8u121-b13-0ubuntu1.16.10.2 [27.4 MB]
+1493958537,,ui,message,    amazon-ebs: Get:33 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libjbig0 amd64 2.1-3.1 [26.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:34 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libtxc-dxtn-s2tc0 amd64 0~git20131104-1.1 [51.8 kB]
+1493958537,,ui,message,    amazon-ebs: Get:35 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 hicolor-icon-theme all 0.15-1 [8%!(PACKER_COMMA)378 B]
+1493958537,,ui,message,    amazon-ebs: Get:36 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libtiff5 amd64 4.0.6-2ubuntu0.1 [147 kB]
+1493958537,,ui,message,    amazon-ebs: Get:37 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgdk-pixbuf2.0-common all 2.34.0-1ubuntu2 [10.4 kB]
+1493958537,,ui,message,    amazon-ebs: Get:38 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgdk-pixbuf2.0-0 amd64 2.34.0-1ubuntu2 [159 kB]
+1493958537,,ui,message,    amazon-ebs: Get:39 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 gtk-update-icon-cache amd64 3.20.9-1ubuntu2.1 [27.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:40 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libpixman-1-0 amd64 0.33.6-1 [231 kB]
+1493958537,,ui,message,    amazon-ebs: Get:41 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-render0 amd64 1.11.1-1ubuntu1 [11.4 kB]
+1493958537,,ui,message,    amazon-ebs: Get:42 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-shm0 amd64 1.11.1-1ubuntu1 [5%!(PACKER_COMMA)588 B]
+1493958537,,ui,message,    amazon-ebs: Get:43 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libcairo2 amd64 1.14.6-1build1 [555 kB]
+1493958537,,ui,message,    amazon-ebs: Get:44 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libcroco3 amd64 0.6.11-1 [81.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:45 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libthai-data all 0.1.25-1 [131 kB]
+1493958537,,ui,message,    amazon-ebs: Get:46 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libdatrie1 amd64 0.2.10-2 [17.3 kB]
+1493958537,,ui,message,    amazon-ebs: Get:47 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libthai0 amd64 0.1.25-1 [17.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:48 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libpango-1.0-0 amd64 1.40.1-1ubuntu1 [149 kB]
+1493958537,,ui,message,    amazon-ebs: Get:49 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgraphite2-3 amd64 1.3.8-1ubuntu1 [71.2 kB]
+1493958537,,ui,message,    amazon-ebs: Get:50 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libharfbuzz0b amd64 1.2.7-1 [180 kB]
+1493958537,,ui,message,    amazon-ebs: Get:51 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libpangoft2-1.0-0 amd64 1.40.1-1ubuntu1 [33.1 kB]
+1493958537,,ui,message,    amazon-ebs: Get:52 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libpangocairo-1.0-0 amd64 1.40.1-1ubuntu1 [20.5 kB]
+1493958537,,ui,message,    amazon-ebs: Get:53 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 librsvg2-2 amd64 2.40.16-1 [93.9 kB]
+1493958537,,ui,message,    amazon-ebs: Get:54 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 librsvg2-common amd64 2.40.16-1 [4%!(PACKER_COMMA)968 B]
+1493958537,,ui,message,    amazon-ebs: Get:55 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 humanity-icon-theme all 0.6.11.1 [1%!(PACKER_COMMA)288 kB]
+1493958537,,ui,message,    amazon-ebs: Get:56 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 ubuntu-mono all 16.10+16.10.20161024-0ubuntu1 [160 kB]
+1493958537,,ui,message,    amazon-ebs: Get:57 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 adwaita-icon-theme all 3.20-3ubuntu2 [3%!(PACKER_COMMA)430 kB]
+1493958537,,ui,message,    amazon-ebs: Get:58 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 dbus-x11 amd64 1.10.10-1ubuntu1.1 [21.7 kB]
+1493958537,,ui,message,    amazon-ebs: Get:59 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 fonts-dejavu-extra all 2.37-1 [1%!(PACKER_COMMA)953 kB]
+1493958537,,ui,message,    amazon-ebs: Get:60 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 gconf2-common all 3.2.6-3ubuntu7 [20.8 kB]
+1493958537,,ui,message,    amazon-ebs: Get:61 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgconf-2-4 amd64 3.2.6-3ubuntu7 [84.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:62 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 gconf-service-backend amd64 3.2.6-3ubuntu7 [57.8 kB]
+1493958537,,ui,message,    amazon-ebs: Get:63 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 gconf-service amd64 3.2.6-3ubuntu7 [2%!(PACKER_COMMA)038 B]
+1493958537,,ui,message,    amazon-ebs: Get:64 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 gconf2 amd64 3.2.6-3ubuntu7 [66.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:65 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libasound2-data all 1.1.2-1 [32.3 kB]
+1493958537,,ui,message,    amazon-ebs: Get:66 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libasound2 amd64 1.1.2-1 [357 kB]
+1493958537,,ui,message,    amazon-ebs: Get:67 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libasyncns0 amd64 0.8-6 [12.1 kB]
+1493958537,,ui,message,    amazon-ebs: Get:68 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libatk1.0-data all 2.20.0-1 [17.5 kB]
+1493958537,,ui,message,    amazon-ebs: Get:69 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libatk1.0-0 amd64 2.20.0-1 [57.6 kB]
+1493958537,,ui,message,    amazon-ebs: Get:70 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libavahi-glib1 amd64 0.6.32-1ubuntu1 [7%!(PACKER_COMMA)676 B]
+1493958537,,ui,message,    amazon-ebs: Get:71 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libltdl7 amd64 2.4.6-1 [38.6 kB]
+1493958538,,ui,message,    amazon-ebs: Get:72 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libtdb1 amd64 1.3.9-1 [38.2 kB]
+1493958538,,ui,message,    amazon-ebs: Get:73 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libvorbis0a amd64 1.3.5-3 [86.8 kB]
+1493958538,,ui,message,    amazon-ebs: Get:74 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libvorbisfile3 amd64 1.3.5-3 [15.9 kB]
+1493958538,,ui,message,    amazon-ebs: Get:75 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 sound-theme-freedesktop all 0.8-1 [385 kB]
+1493958538,,ui,message,    amazon-ebs: Get:76 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libcanberra0 amd64 0.30-3ubuntu1 [37.8 kB]
+1493958538,,ui,message,    amazon-ebs: Get:77 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libdrm-amdgpu1 amd64 2.4.70-1 [16.4 kB]
+1493958538,,ui,message,    amazon-ebs: Get:78 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libpciaccess0 amd64 0.13.4-1 [18.1 kB]
+1493958538,,ui,message,    amazon-ebs: Get:79 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libdrm-intel1 amd64 2.4.70-1 [56.0 kB]
+1493958538,,ui,message,    amazon-ebs: Get:80 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libdrm-nouveau2 amd64 2.4.70-1 [16.3 kB]
+1493958538,,ui,message,    amazon-ebs: Get:81 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libdrm-radeon1 amd64 2.4.70-1 [21.5 kB]
+1493958538,,ui,message,    amazon-ebs: Get:82 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libflac8 amd64 1.3.1-4 [210 kB]
+1493958538,,ui,message,    amazon-ebs: Get:83 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgtk2.0-common all 2.24.30-4ubuntu3 [123 kB]
+1493958538,,ui,message,    amazon-ebs: Get:84 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxrandr2 amd64 2:1.5.0-1 [17.6 kB]
+1493958538,,ui,message,    amazon-ebs: Get:85 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgtk2.0-0 amd64 2.24.30-4ubuntu3 [1%!(PACKER_COMMA)772 kB]
+1493958538,,ui,message,    amazon-ebs: Get:86 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgail18 amd64 2.24.30-4ubuntu3 [14.1 kB]
+1493958538,,ui,message,    amazon-ebs: Get:87 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgail-common amd64 2.24.30-4ubuntu3 [112 kB]
+1493958538,,ui,message,    amazon-ebs: Get:88 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgif7 amd64 5.1.4-0.3 [30.5 kB]
+1493958538,,ui,message,    amazon-ebs: Get:89 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libllvm3.8 amd64 1:3.8.1-12ubuntu1 [10.3 MB]
+1493958538,,ui,message,    amazon-ebs: Get:90 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgl1-mesa-dri amd64 12.0.6-0ubuntu0.16.10.1 [4%!(PACKER_COMMA)365 kB]
+1493958538,,ui,message,    amazon-ebs: Get:91 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libglapi-mesa amd64 12.0.6-0ubuntu0.16.10.1 [22.7 kB]
+1493958538,,ui,message,    amazon-ebs: Get:92 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libx11-xcb1 amd64 2:1.6.3-1ubuntu3 [8%!(PACKER_COMMA)872 B]
+1493958538,,ui,message,    amazon-ebs: Get:93 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-dri2-0 amd64 1.11.1-1ubuntu1 [6%!(PACKER_COMMA)882 B]
+1493958538,,ui,message,    amazon-ebs: Get:94 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-dri3-0 amd64 1.11.1-1ubuntu1 [5%!(PACKER_COMMA)218 B]
+1493958538,,ui,message,    amazon-ebs: Get:95 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-glx0 amd64 1.11.1-1ubuntu1 [20.9 kB]
+1493958538,,ui,message,    amazon-ebs: Get:96 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-present0 amd64 1.11.1-1ubuntu1 [5%!(PACKER_COMMA)218 B]
+1493958538,,ui,message,    amazon-ebs: Get:97 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libxcb-sync1 amd64 1.11.1-1ubuntu1 [8%!(PACKER_COMMA)324 B]
+1493958538,,ui,message,    amazon-ebs: Get:98 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgl1-mesa-glx amd64 12.0.6-0ubuntu0.16.10.1 [130 kB]
+1493958538,,ui,message,    amazon-ebs: Get:99 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgnomevfs2-common amd64 1:2.24.4-6.1ubuntu2 [23.0 kB]
+1493958538,,ui,message,    amazon-ebs: Get:100 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgnomevfs2-0 amd64 1:2.24.4-6.1ubuntu2 [213 kB]
+1493958538,,ui,message,    amazon-ebs: Get:101 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgnome2-common all 2.32.1-5ubuntu1 [33.5 kB]
+1493958538,,ui,message,    amazon-ebs: Get:102 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libgnome-2-0 amd64 2.32.1-5ubuntu1 [53.7 kB]
+1493958538,,ui,message,    amazon-ebs: Get:103 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libgtk2.0-bin amd64 2.24.30-4ubuntu3 [7%!(PACKER_COMMA)666 B]
+1493958538,,ui,message,    amazon-ebs: Get:104 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libvorbisenc2 amd64 1.3.5-3 [70.7 kB]
+1493958538,,ui,message,    amazon-ebs: Get:105 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 libsndfile1 amd64 1.0.25-10 [137 kB]
+1493958538,,ui,message,    amazon-ebs: Get:106 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 libpulse0 amd64 1:9.0-2ubuntu2.1 [253 kB]
+1493958538,,ui,message,    amazon-ebs: Get:107 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety-updates/main amd64 openjdk-8-jre amd64 8u121-b13-0ubuntu1.16.10.2 [69.3 kB]
+1493958538,,ui,message,    amazon-ebs: Get:108 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 unzip amd64 6.0-20ubuntu1 [158 kB]
+1493958538,,ui,message,    amazon-ebs: Get:109 http://eu-west-1.ec2.archive.ubuntu.com/ubuntu yakkety/main amd64 zip amd64 3.0-11 [158 kB]
+1493958538,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Dialog
+1493958538,,ui,message,    amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1493958538,,ui,message,    amazon-ebs: debconf: falling back to frontend: Readline
+1493958538,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Readline
+1493958538,,ui,message,    amazon-ebs: debconf: (This frontend requires a controlling tty.)
+1493958538,,ui,message,    amazon-ebs: debconf: falling back to frontend: Teletype
+1493958538,,ui,message,    amazon-ebs: dpkg-preconfigure: unable to re-open stdin:
+1493958538,,ui,message,    amazon-ebs: Fetched 59.9 MB in 2s (26.5 MB/s)
+1493958538,,ui,message,    amazon-ebs: Selecting previously unselected package fonts-dejavu-core.
+1493958539,,ui,message,    amazon-ebs: (Reading database ... 55685 files and directories currently installed.)
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../000-fonts-dejavu-core_2.37-1_all.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking fonts-dejavu-core (2.37-1) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package fontconfig-config.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../001-fontconfig-config_2.11.94-0ubuntu2_all.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking fontconfig-config (2.11.94-0ubuntu2) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libfontconfig1:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../002-libfontconfig1_2.11.94-0ubuntu2_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libfontconfig1:amd64 (2.11.94-0ubuntu2) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package fontconfig.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../003-fontconfig_2.11.94-0ubuntu2_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking fontconfig (2.11.94-0ubuntu2) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libbonobo2-common.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../004-libbonobo2-common_2.32.1-3_all.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libbonobo2-common (2.32.1-3) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package liborbit-2-0:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../005-liborbit-2-0_1%3a2.14.19-1build2_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking liborbit-2-0:amd64 (1:2.14.19-1build2) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libbonobo2-0:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../006-libbonobo2-0_2.32.1-3_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libbonobo2-0:amd64 (2.32.1-3) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libjpeg-turbo8:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../007-libjpeg-turbo8_1.5.0-0ubuntu1_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libjpeg-turbo8:amd64 (1.5.0-0ubuntu1) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libogg0:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../008-libogg0_1.3.2-1_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libogg0:amd64 (1.3.2-1) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libxcomposite1:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../009-libxcomposite1_1%3a0.4.4-1_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libxcomposite1:amd64 (1:0.4.4-1) ...
+1493958539,,ui,message,    amazon-ebs: Selecting previously unselected package libxfixes3:amd64.
+1493958539,,ui,message,    amazon-ebs: Preparing to unpack .../010-libxfixes3_1%3a5.0.2-1_amd64.deb ...
+1493958539,,ui,message,    amazon-ebs: Unpacking libxfixes3:amd64 (1:5.0.2-1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxrender1:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../011-libxrender1_1%3a0.9.9-2_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxrender1:amd64 (1:0.9.9-2) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxcursor1:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../012-libxcursor1_1%3a1.1.14-1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxcursor1:amd64 (1:1.1.14-1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxdamage1:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../013-libxdamage1_1%3a1.1.4-2_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxdamage1:amd64 (1:1.1.4-2) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxinerama1:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../014-libxinerama1_2%3a1.1.3-1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxinerama1:amd64 (2:1.1.3-1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxshmfence1:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../015-libxshmfence1_1.2-1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxshmfence1:amd64 (1.2-1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package x11-common.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../016-x11-common_1%3a7.7+13ubuntu4_all.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking x11-common (1:7.7+13ubuntu4) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxtst6:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../017-libxtst6_2%3a1.2.2-1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxtst6:amd64 (2:1.2.2-1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libxxf86vm1:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../018-libxxf86vm1_1%3a1.1.4-1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libxxf86vm1:amd64 (1:1.1.4-1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libnspr4:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../019-libnspr4_2%3a4.13.1-0ubuntu0.16.10.1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libnspr4:amd64 (2:4.13.1-0ubuntu0.16.10.1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libnss3:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../020-libnss3_2%3a3.28.4-0ubuntu0.16.10.1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libnss3:amd64 (2:3.28.4-0ubuntu0.16.10.1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package ca-certificates-java.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../021-ca-certificates-java_20160321_all.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking ca-certificates-java (20160321) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package java-common.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../022-java-common_0.57ubuntu1_all.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking java-common (0.57ubuntu1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libavahi-common-data:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../023-libavahi-common-data_0.6.32-1ubuntu1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libavahi-common-data:amd64 (0.6.32-1ubuntu1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libavahi-common3:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../024-libavahi-common3_0.6.32-1ubuntu1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libavahi-common3:amd64 (0.6.32-1ubuntu1) ...
+1493958540,,ui,message,    amazon-ebs: Selecting previously unselected package libavahi-client3:amd64.
+1493958540,,ui,message,    amazon-ebs: Preparing to unpack .../025-libavahi-client3_0.6.32-1ubuntu1_amd64.deb ...
+1493958540,,ui,message,    amazon-ebs: Unpacking libavahi-client3:amd64 (0.6.32-1ubuntu1) ...
+1493958541,,ui,message,    amazon-ebs: Selecting previously unselected package libcups2:amd64.
+1493958541,,ui,message,    amazon-ebs: Preparing to unpack .../026-libcups2_2.2.0-2_amd64.deb ...
+1493958541,,ui,message,    amazon-ebs: Unpacking libcups2:amd64 (2.2.0-2) ...
+1493958541,,ui,message,    amazon-ebs: Selecting previously unselected package liblcms2-2:amd64.
+1493958541,,ui,message,    amazon-ebs: Preparing to unpack .../027-liblcms2-2_2.7-1ubuntu1_amd64.deb ...
+1493958541,,ui,message,    amazon-ebs: Unpacking liblcms2-2:amd64 (2.7-1ubuntu1) ...
+1493958541,,ui,message,    amazon-ebs: Selecting previously unselected package libjpeg8:amd64.
+1493958541,,ui,message,    amazon-ebs: Preparing to unpack .../028-libjpeg8_8c-2ubuntu8_amd64.deb ...
+1493958541,,ui,message,    amazon-ebs: Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+1493958541,,ui,message,    amazon-ebs: Selecting previously unselected package libpcsclite1:amd64.
+1493958541,,ui,message,    amazon-ebs: Preparing to unpack .../029-libpcsclite1_1.8.14-1ubuntu1.16.10.1_amd64.deb ...
+1493958541,,ui,message,    amazon-ebs: Unpacking libpcsclite1:amd64 (1.8.14-1ubuntu1.16.10.1) ...
+1493958541,,ui,message,    amazon-ebs: Selecting previously unselected package libxi6:amd64.
+1493958541,,ui,message,    amazon-ebs: Preparing to unpack .../030-libxi6_2%3a1.7.6-1_amd64.deb ...
+1493958541,,ui,message,    amazon-ebs: Unpacking libxi6:amd64 (2:1.7.6-1) ...
+1493958541,,ui,message,    amazon-ebs: Selecting previously unselected package openjdk-8-jre-headless:amd64.
+1493958541,,ui,message,    amazon-ebs: Preparing to unpack .../031-openjdk-8-jre-headless_8u121-b13-0ubuntu1.16.10.2_amd64.deb ...
+1493958541,,ui,message,    amazon-ebs: Unpacking openjdk-8-jre-headless:amd64 (8u121-b13-0ubuntu1.16.10.2) ...
+1493958544,,ui,message,    amazon-ebs: Selecting previously unselected package libjbig0:amd64.
+1493958544,,ui,message,    amazon-ebs: Preparing to unpack .../032-libjbig0_2.1-3.1_amd64.deb ...
+1493958544,,ui,message,    amazon-ebs: Unpacking libjbig0:amd64 (2.1-3.1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libtxc-dxtn-s2tc0:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../033-libtxc-dxtn-s2tc0_0~git20131104-1.1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libtxc-dxtn-s2tc0:amd64 (0~git20131104-1.1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package hicolor-icon-theme.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../034-hicolor-icon-theme_0.15-1_all.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking hicolor-icon-theme (0.15-1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libtiff5:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../035-libtiff5_4.0.6-2ubuntu0.1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libtiff5:amd64 (4.0.6-2ubuntu0.1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libgdk-pixbuf2.0-common.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../036-libgdk-pixbuf2.0-common_2.34.0-1ubuntu2_all.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libgdk-pixbuf2.0-common (2.34.0-1ubuntu2) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libgdk-pixbuf2.0-0:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../037-libgdk-pixbuf2.0-0_2.34.0-1ubuntu2_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libgdk-pixbuf2.0-0:amd64 (2.34.0-1ubuntu2) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package gtk-update-icon-cache.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../038-gtk-update-icon-cache_3.20.9-1ubuntu2.1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: No diversion 'diversion of /usr/sbin/update-icon-caches to /usr/sbin/update-icon-caches.gtk2 by libgtk-3-bin'%!(PACKER_COMMA) none removed.
+1493958545,,ui,message,    amazon-ebs: No diversion 'diversion of /usr/share/man/man8/update-icon-caches.8.gz to /usr/share/man/man8/update-icon-caches.gtk2.8.gz by libgtk-3-bin'%!(PACKER_COMMA) none removed.
+1493958545,,ui,message,    amazon-ebs: Unpacking gtk-update-icon-cache (3.20.9-1ubuntu2.1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libpixman-1-0:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../039-libpixman-1-0_0.33.6-1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libpixman-1-0:amd64 (0.33.6-1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-render0:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../040-libxcb-render0_1.11.1-1ubuntu1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libxcb-render0:amd64 (1.11.1-1ubuntu1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-shm0:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../041-libxcb-shm0_1.11.1-1ubuntu1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libxcb-shm0:amd64 (1.11.1-1ubuntu1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libcairo2:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../042-libcairo2_1.14.6-1build1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libcairo2:amd64 (1.14.6-1build1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libcroco3:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../043-libcroco3_0.6.11-1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libcroco3:amd64 (0.6.11-1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libthai-data.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../044-libthai-data_0.1.25-1_all.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libthai-data (0.1.25-1) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libdatrie1:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../045-libdatrie1_0.2.10-2_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libdatrie1:amd64 (0.2.10-2) ...
+1493958545,,ui,message,    amazon-ebs: Selecting previously unselected package libthai0:amd64.
+1493958545,,ui,message,    amazon-ebs: Preparing to unpack .../046-libthai0_0.1.25-1_amd64.deb ...
+1493958545,,ui,message,    amazon-ebs: Unpacking libthai0:amd64 (0.1.25-1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package libpango-1.0-0:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../047-libpango-1.0-0_1.40.1-1ubuntu1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking libpango-1.0-0:amd64 (1.40.1-1ubuntu1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package libgraphite2-3:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../048-libgraphite2-3_1.3.8-1ubuntu1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking libgraphite2-3:amd64 (1.3.8-1ubuntu1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package libharfbuzz0b:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../049-libharfbuzz0b_1.2.7-1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking libharfbuzz0b:amd64 (1.2.7-1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package libpangoft2-1.0-0:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../050-libpangoft2-1.0-0_1.40.1-1ubuntu1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking libpangoft2-1.0-0:amd64 (1.40.1-1ubuntu1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package libpangocairo-1.0-0:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../051-libpangocairo-1.0-0_1.40.1-1ubuntu1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking libpangocairo-1.0-0:amd64 (1.40.1-1ubuntu1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package librsvg2-2:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../052-librsvg2-2_2.40.16-1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking librsvg2-2:amd64 (2.40.16-1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package librsvg2-common:amd64.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../053-librsvg2-common_2.40.16-1_amd64.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking librsvg2-common:amd64 (2.40.16-1) ...
+1493958546,,ui,message,    amazon-ebs: Selecting previously unselected package humanity-icon-theme.
+1493958546,,ui,message,    amazon-ebs: Preparing to unpack .../054-humanity-icon-theme_0.6.11.1_all.deb ...
+1493958546,,ui,message,    amazon-ebs: Unpacking humanity-icon-theme (0.6.11.1) ...
+1493958549,,ui,message,    amazon-ebs: Selecting previously unselected package ubuntu-mono.
+1493958549,,ui,message,    amazon-ebs: Preparing to unpack .../055-ubuntu-mono_16.10+16.10.20161024-0ubuntu1_all.deb ...
+1493958549,,ui,message,    amazon-ebs: Unpacking ubuntu-mono (16.10+16.10.20161024-0ubuntu1) ...
+1493958551,,ui,message,    amazon-ebs: Selecting previously unselected package adwaita-icon-theme.
+1493958551,,ui,message,    amazon-ebs: Preparing to unpack .../056-adwaita-icon-theme_3.20-3ubuntu2_all.deb ...
+1493958551,,ui,message,    amazon-ebs: Unpacking adwaita-icon-theme (3.20-3ubuntu2) ...
+1493958552,,ui,message,    amazon-ebs: Selecting previously unselected package dbus-x11.
+1493958552,,ui,message,    amazon-ebs: Preparing to unpack .../057-dbus-x11_1.10.10-1ubuntu1.1_amd64.deb ...
+1493958552,,ui,message,    amazon-ebs: Unpacking dbus-x11 (1.10.10-1ubuntu1.1) ...
+1493958552,,ui,message,    amazon-ebs: Selecting previously unselected package fonts-dejavu-extra.
+1493958552,,ui,message,    amazon-ebs: Preparing to unpack .../058-fonts-dejavu-extra_2.37-1_all.deb ...
+1493958552,,ui,message,    amazon-ebs: Unpacking fonts-dejavu-extra (2.37-1) ...
+1493958552,,ui,message,    amazon-ebs: Selecting previously unselected package gconf2-common.
+1493958552,,ui,message,    amazon-ebs: Preparing to unpack .../059-gconf2-common_3.2.6-3ubuntu7_all.deb ...
+1493958552,,ui,message,    amazon-ebs: Unpacking gconf2-common (3.2.6-3ubuntu7) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libgconf-2-4:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../060-libgconf-2-4_3.2.6-3ubuntu7_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libgconf-2-4:amd64 (3.2.6-3ubuntu7) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package gconf-service-backend.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../061-gconf-service-backend_3.2.6-3ubuntu7_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking gconf-service-backend (3.2.6-3ubuntu7) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package gconf-service.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../062-gconf-service_3.2.6-3ubuntu7_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking gconf-service (3.2.6-3ubuntu7) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package gconf2.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../063-gconf2_3.2.6-3ubuntu7_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking gconf2 (3.2.6-3ubuntu7) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libasound2-data.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../064-libasound2-data_1.1.2-1_all.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libasound2-data (1.1.2-1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libasound2:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../065-libasound2_1.1.2-1_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libasound2:amd64 (1.1.2-1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libasyncns0:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../066-libasyncns0_0.8-6_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libasyncns0:amd64 (0.8-6) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libatk1.0-data.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../067-libatk1.0-data_2.20.0-1_all.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libatk1.0-data (2.20.0-1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libatk1.0-0:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../068-libatk1.0-0_2.20.0-1_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libatk1.0-0:amd64 (2.20.0-1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libavahi-glib1:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../069-libavahi-glib1_0.6.32-1ubuntu1_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libavahi-glib1:amd64 (0.6.32-1ubuntu1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libltdl7:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../070-libltdl7_2.4.6-1_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libltdl7:amd64 (2.4.6-1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libtdb1:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../071-libtdb1_1.3.9-1_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libtdb1:amd64 (1.3.9-1) ...
+1493958553,,ui,message,    amazon-ebs: Selecting previously unselected package libvorbis0a:amd64.
+1493958553,,ui,message,    amazon-ebs: Preparing to unpack .../072-libvorbis0a_1.3.5-3_amd64.deb ...
+1493958553,,ui,message,    amazon-ebs: Unpacking libvorbis0a:amd64 (1.3.5-3) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libvorbisfile3:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../073-libvorbisfile3_1.3.5-3_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libvorbisfile3:amd64 (1.3.5-3) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package sound-theme-freedesktop.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../074-sound-theme-freedesktop_0.8-1_all.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking sound-theme-freedesktop (0.8-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libcanberra0:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../075-libcanberra0_0.30-3ubuntu1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libcanberra0:amd64 (0.30-3ubuntu1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libdrm-amdgpu1:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../076-libdrm-amdgpu1_2.4.70-1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libdrm-amdgpu1:amd64 (2.4.70-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libpciaccess0:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../077-libpciaccess0_0.13.4-1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libpciaccess0:amd64 (0.13.4-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libdrm-intel1:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../078-libdrm-intel1_2.4.70-1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libdrm-intel1:amd64 (2.4.70-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libdrm-nouveau2:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../079-libdrm-nouveau2_2.4.70-1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libdrm-nouveau2:amd64 (2.4.70-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libdrm-radeon1:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../080-libdrm-radeon1_2.4.70-1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libdrm-radeon1:amd64 (2.4.70-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libflac8:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../081-libflac8_1.3.1-4_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libflac8:amd64 (1.3.1-4) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libgtk2.0-common.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../082-libgtk2.0-common_2.24.30-4ubuntu3_all.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libgtk2.0-common (2.24.30-4ubuntu3) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libxrandr2:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../083-libxrandr2_2%3a1.5.0-1_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libxrandr2:amd64 (2:1.5.0-1) ...
+1493958554,,ui,message,    amazon-ebs: Selecting previously unselected package libgtk2.0-0:amd64.
+1493958554,,ui,message,    amazon-ebs: Preparing to unpack .../084-libgtk2.0-0_2.24.30-4ubuntu3_amd64.deb ...
+1493958554,,ui,message,    amazon-ebs: Unpacking libgtk2.0-0:amd64 (2.24.30-4ubuntu3) ...
+1493958555,,ui,message,    amazon-ebs: Selecting previously unselected package libgail18:amd64.
+1493958555,,ui,message,    amazon-ebs: Preparing to unpack .../085-libgail18_2.24.30-4ubuntu3_amd64.deb ...
+1493958555,,ui,message,    amazon-ebs: Unpacking libgail18:amd64 (2.24.30-4ubuntu3) ...
+1493958555,,ui,message,    amazon-ebs: Selecting previously unselected package libgail-common:amd64.
+1493958555,,ui,message,    amazon-ebs: Preparing to unpack .../086-libgail-common_2.24.30-4ubuntu3_amd64.deb ...
+1493958555,,ui,message,    amazon-ebs: Unpacking libgail-common:amd64 (2.24.30-4ubuntu3) ...
+1493958555,,ui,message,    amazon-ebs: Selecting previously unselected package libgif7:amd64.
+1493958555,,ui,message,    amazon-ebs: Preparing to unpack .../087-libgif7_5.1.4-0.3_amd64.deb ...
+1493958555,,ui,message,    amazon-ebs: Unpacking libgif7:amd64 (5.1.4-0.3) ...
+1493958555,,ui,message,    amazon-ebs: Selecting previously unselected package libllvm3.8:amd64.
+1493958555,,ui,message,    amazon-ebs: Preparing to unpack .../088-libllvm3.8_1%3a3.8.1-12ubuntu1_amd64.deb ...
+1493958555,,ui,message,    amazon-ebs: Unpacking libllvm3.8:amd64 (1:3.8.1-12ubuntu1) ...
+1493958556,,ui,message,    amazon-ebs: Selecting previously unselected package libgl1-mesa-dri:amd64.
+1493958556,,ui,message,    amazon-ebs: Preparing to unpack .../089-libgl1-mesa-dri_12.0.6-0ubuntu0.16.10.1_amd64.deb ...
+1493958556,,ui,message,    amazon-ebs: Unpacking libgl1-mesa-dri:amd64 (12.0.6-0ubuntu0.16.10.1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libglapi-mesa:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../090-libglapi-mesa_12.0.6-0ubuntu0.16.10.1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libglapi-mesa:amd64 (12.0.6-0ubuntu0.16.10.1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libx11-xcb1:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../091-libx11-xcb1_2%3a1.6.3-1ubuntu3_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libx11-xcb1:amd64 (2:1.6.3-1ubuntu3) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-dri2-0:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../092-libxcb-dri2-0_1.11.1-1ubuntu1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libxcb-dri2-0:amd64 (1.11.1-1ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-dri3-0:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../093-libxcb-dri3-0_1.11.1-1ubuntu1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libxcb-dri3-0:amd64 (1.11.1-1ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-glx0:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../094-libxcb-glx0_1.11.1-1ubuntu1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libxcb-glx0:amd64 (1.11.1-1ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-present0:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../095-libxcb-present0_1.11.1-1ubuntu1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libxcb-present0:amd64 (1.11.1-1ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libxcb-sync1:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../096-libxcb-sync1_1.11.1-1ubuntu1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libxcb-sync1:amd64 (1.11.1-1ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libgl1-mesa-glx:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../097-libgl1-mesa-glx_12.0.6-0ubuntu0.16.10.1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libgl1-mesa-glx:amd64 (12.0.6-0ubuntu0.16.10.1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libgnomevfs2-common.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../098-libgnomevfs2-common_1%3a2.24.4-6.1ubuntu2_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libgnomevfs2-common (1:2.24.4-6.1ubuntu2) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libgnomevfs2-0:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../099-libgnomevfs2-0_1%3a2.24.4-6.1ubuntu2_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libgnomevfs2-0:amd64 (1:2.24.4-6.1ubuntu2) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libgnome2-common.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../100-libgnome2-common_2.32.1-5ubuntu1_all.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libgnome2-common (2.32.1-5ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libgnome-2-0:amd64.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../101-libgnome-2-0_2.32.1-5ubuntu1_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libgnome-2-0:amd64 (2.32.1-5ubuntu1) ...
+1493958557,,ui,message,    amazon-ebs: Selecting previously unselected package libgtk2.0-bin.
+1493958557,,ui,message,    amazon-ebs: Preparing to unpack .../102-libgtk2.0-bin_2.24.30-4ubuntu3_amd64.deb ...
+1493958557,,ui,message,    amazon-ebs: Unpacking libgtk2.0-bin (2.24.30-4ubuntu3) ...
+1493958558,,ui,message,    amazon-ebs: Selecting previously unselected package libvorbisenc2:amd64.
+1493958558,,ui,message,    amazon-ebs: Preparing to unpack .../103-libvorbisenc2_1.3.5-3_amd64.deb ...
+1493958558,,ui,message,    amazon-ebs: Unpacking libvorbisenc2:amd64 (1.3.5-3) ...
+1493958558,,ui,message,    amazon-ebs: Selecting previously unselected package libsndfile1:amd64.
+1493958558,,ui,message,    amazon-ebs: Preparing to unpack .../104-libsndfile1_1.0.25-10_amd64.deb ...
+1493958558,,ui,message,    amazon-ebs: Unpacking libsndfile1:amd64 (1.0.25-10) ...
+1493958558,,ui,message,    amazon-ebs: Selecting previously unselected package libpulse0:amd64.
+1493958558,,ui,message,    amazon-ebs: Preparing to unpack .../105-libpulse0_1%3a9.0-2ubuntu2.1_amd64.deb ...
+1493958558,,ui,message,    amazon-ebs: Unpacking libpulse0:amd64 (1:9.0-2ubuntu2.1) ...
+1493958558,,ui,message,    amazon-ebs: Selecting previously unselected package openjdk-8-jre:amd64.
+1493958558,,ui,message,    amazon-ebs: Preparing to unpack .../106-openjdk-8-jre_8u121-b13-0ubuntu1.16.10.2_amd64.deb ...
+1493958558,,ui,message,    amazon-ebs: Unpacking openjdk-8-jre:amd64 (8u121-b13-0ubuntu1.16.10.2) ...
+1493958558,,ui,message,    amazon-ebs: Selecting previously unselected package unzip.
+1493958558,,ui,message,    amazon-ebs: Preparing to unpack .../107-unzip_6.0-20ubuntu1_amd64.deb ...
+1493958558,,ui,message,    amazon-ebs: Unpacking unzip (6.0-20ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Selecting previously unselected package zip.
+1493958558,,ui,message,    amazon-ebs: Preparing to unpack .../108-zip_3.0-11_amd64.deb ...
+1493958558,,ui,message,    amazon-ebs: Unpacking zip (3.0-11) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxi6:amd64 (2:1.7.6-1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxcb-present0:amd64 (1.11.1-1ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libllvm3.8:amd64 (1:3.8.1-12ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up gconf2-common (3.2.6-3ubuntu7) ...
+1493958558,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Dialog
+1493958558,,ui,message,    amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1493958558,,ui,message,    amazon-ebs: debconf: falling back to frontend: Readline
+1493958558,,ui,message,    amazon-ebs:
+1493958558,,ui,message,    amazon-ebs: Creating config file /etc/gconf/2/path with new version
+1493958558,,ui,message,    amazon-ebs: Setting up libtdb1:amd64 (1.3.9-1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxinerama1:amd64 (2:1.1.3-1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxcb-dri2-0:amd64 (1.11.1-1ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxcb-dri3-0:amd64 (1.11.1-1ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxcb-glx0:amd64 (1.11.1-1ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libgtk2.0-common (2.24.30-4ubuntu3) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxcb-render0:amd64 (1.11.1-1ubuntu1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libasyncns0:amd64 (0.8-6) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxdamage1:amd64 (1:1.1.4-2) ...
+1493958558,,ui,message,    amazon-ebs: Setting up sound-theme-freedesktop (0.8-1) ...
+1493958558,,ui,message,    amazon-ebs: Setting up libxfixes3:amd64 (1:5.0.2-1) ...
+1493958558,,ui,message,    amazon-ebs: Processing triggers for mime-support (3.60ubuntu1) ...
+1493958559,,ui,message,    amazon-ebs: Processing triggers for ureadahead (0.100.0-19) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libdrm-amdgpu1:amd64 (2.4.70-1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libtxc-dxtn-s2tc0:amd64 (0~git20131104-1.1) ...
+1493958559,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/x86_64-linux-gnu/libtxc_dxtn_s2tc.so.0 to provide /usr/lib/x86_64-linux-gnu/libtxc_dxtn.so (libtxc-dxtn-x86_64-linux-gnu) in auto mode
+1493958559,,ui,message,    amazon-ebs: Setting up liblcms2-2:amd64 (2.7-1ubuntu1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libjbig0:amd64 (2.1-3.1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libpcsclite1:amd64 (1.8.14-1ubuntu1.16.10.1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up fonts-dejavu-core (2.37-1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libbonobo2-common (2.32.1-3) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libasound2-data (1.1.2-1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up libxshmfence1:amd64 (1.2-1) ...
+1493958559,,ui,message,    amazon-ebs: Setting up unzip (6.0-20ubuntu1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up java-common (0.57ubuntu1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up dbus-x11 (1.10.10-1ubuntu1.1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libgdk-pixbuf2.0-common (2.34.0-1ubuntu2) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libdatrie1:amd64 (0.2.10-2) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libgif7:amd64 (5.1.4-0.3) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libjpeg-turbo8:amd64 (1.5.0-0ubuntu1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libglapi-mesa:amd64 (12.0.6-0ubuntu0.16.10.1) ...
+1493958560,,ui,message,    amazon-ebs: Processing triggers for sgml-base (1.28) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libnspr4:amd64 (2:4.13.1-0ubuntu0.16.10.1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up zip (3.0-11) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libasound2:amd64 (1.1.2-1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libgraphite2-3:amd64 (1.3.8-1ubuntu1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libcroco3:amd64 (0.6.11-1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libxcb-sync1:amd64 (1.11.1-1ubuntu1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libogg0:amd64 (1.3.2-1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libatk1.0-data (2.20.0-1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libx11-xcb1:amd64 (2:1.6.3-1ubuntu3) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libpixman-1-0:amd64 (0.33.6-1) ...
+1493958560,,ui,message,    amazon-ebs: Processing triggers for libc-bin (2.24-3ubuntu2) ...
+1493958560,,ui,message,    amazon-ebs: Setting up liborbit-2-0:amd64 (1:2.14.19-1build2) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libatk1.0-0:amd64 (2.20.0-1) ...
+1493958560,,ui,message,    amazon-ebs: Processing triggers for systemd (231-9ubuntu3) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libltdl7:amd64 (2.4.6-1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libxcomposite1:amd64 (1:0.4.4-1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libxcb-shm0:amd64 (1.11.1-1ubuntu1) ...
+1493958560,,ui,message,    amazon-ebs: Setting up libpciaccess0:amd64 (0.13.4-1) ...
+1493958561,,ui,message,    amazon-ebs: Setting up libxrender1:amd64 (1:0.9.9-2) ...
+1493958561,,ui,message,    amazon-ebs: Processing triggers for man-db (2.7.5-1) ...
+1493958562,,ui,message,    amazon-ebs: Setting up libdrm-radeon1:amd64 (2.4.70-1) ...
+1493958562,,ui,message,    amazon-ebs: Setting up libthai-data (0.1.25-1) ...
+1493958562,,ui,message,    amazon-ebs: Setting up libxxf86vm1:amd64 (1:1.1.4-1) ...
+1493958562,,ui,message,    amazon-ebs: Setting up libdrm-nouveau2:amd64 (2.4.70-1) ...
+1493958562,,ui,message,    amazon-ebs: Setting up fonts-dejavu-extra (2.37-1) ...
+1493958562,,ui,message,    amazon-ebs: Setting up libvorbis0a:amd64 (1.3.5-3) ...
+1493958562,,ui,message,    amazon-ebs: Setting up x11-common (1:7.7+13ubuntu4) ...
+1493958562,,ui,message,    amazon-ebs: debconf: unable to initialize frontend: Dialog
+1493958562,,ui,message,    amazon-ebs: debconf: (Dialog frontend will not work on a dumb terminal%!(PACKER_COMMA) an emacs shell buffer%!(PACKER_COMMA) or without a controlling terminal.)
+1493958562,,ui,message,    amazon-ebs: debconf: falling back to frontend: Readline
+1493958562,,ui,message,    amazon-ebs: update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+1493958563,,ui,message,    amazon-ebs: Processing triggers for ca-certificates (20160104ubuntu1) ...
+1493958563,,ui,message,    amazon-ebs: Updating certificates in /etc/ssl/certs...
+1493958566,,ui,message,    amazon-ebs: 0 added%!(PACKER_COMMA) 0 removed; done.
+1493958566,,ui,message,    amazon-ebs: Running hooks in /etc/ca-certificates/update.d...
+1493958566,,ui,message,    amazon-ebs: done.
+1493958566,,ui,message,    amazon-ebs: Setting up hicolor-icon-theme (0.15-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libxrandr2:amd64 (2:1.5.0-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libavahi-common-data:amd64 (0.6.32-1ubuntu1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libvorbisfile3:amd64 (1.3.5-3) ...
+1493958566,,ui,message,    amazon-ebs: Setting up fontconfig-config (2.11.94-0ubuntu2) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libcanberra0:amd64 (0.30-3ubuntu1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libgconf-2-4:amd64 (3.2.6-3ubuntu7) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libflac8:amd64 (1.3.1-4) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libnss3:amd64 (2:3.28.4-0ubuntu0.16.10.1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libharfbuzz0b:amd64 (1.2.7-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libtiff5:amd64 (4.0.6-2ubuntu0.1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libthai0:amd64 (0.1.25-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libxtst6:amd64 (2:1.2.2-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libbonobo2-0:amd64 (2.32.1-3) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libdrm-intel1:amd64 (2.4.70-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libxcursor1:amd64 (1:1.1.14-1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libavahi-common3:amd64 (0.6.32-1ubuntu1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libavahi-glib1:amd64 (0.6.32-1ubuntu1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libvorbisenc2:amd64 (1.3.5-3) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libfontconfig1:amd64 (2.11.94-0ubuntu2) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libgdk-pixbuf2.0-0:amd64 (2.34.0-1ubuntu2) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libgl1-mesa-dri:amd64 (12.0.6-0ubuntu0.16.10.1) ...
+1493958566,,ui,message,    amazon-ebs: Setting up libsndfile1:amd64 (1.0.25-10) ...
+1493958566,,ui,message,    amazon-ebs: Setting up gtk-update-icon-cache (3.20.9-1ubuntu2.1) ...
+1493958567,,ui,message,    amazon-ebs: Setting up libgl1-mesa-glx:amd64 (12.0.6-0ubuntu0.16.10.1) ...
+1493958567,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf to provide /etc/ld.so.conf.d/x86_64-linux-gnu_GL.conf (x86_64-linux-gnu_gl_conf) in auto mode
+1493958567,,ui,message,    amazon-ebs: Setting up libavahi-client3:amd64 (0.6.32-1ubuntu1) ...
+1493958567,,ui,message,    amazon-ebs: Setting up fontconfig (2.11.94-0ubuntu2) ...
+1493958570,,ui,message,    amazon-ebs: Regenerating fonts cache... done.
+1493958570,,ui,message,    amazon-ebs: Setting up libcups2:amd64 (2.2.0-2) ...
+1493958570,,ui,message,    amazon-ebs: Setting up libcairo2:amd64 (1.14.6-1build1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up libpulse0:amd64 (1:9.0-2ubuntu2.1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up libpango-1.0-0:amd64 (1.40.1-1ubuntu1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up libpangoft2-1.0-0:amd64 (1.40.1-1ubuntu1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up libpangocairo-1.0-0:amd64 (1.40.1-1ubuntu1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up librsvg2-2:amd64 (2.40.16-1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up librsvg2-common:amd64 (2.40.16-1) ...
+1493958570,,ui,message,    amazon-ebs: Setting up gconf-service-backend (3.2.6-3ubuntu7) ...
+1493958570,,ui,message,    amazon-ebs: Setting up openjdk-8-jre-headless:amd64 (8u121-b13-0ubuntu1.16.10.2) ...
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode
+1493958570,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+1493958571,,ui,message,    amazon-ebs: Setting up adwaita-icon-theme (3.20-3ubuntu2) ...
+1493958571,,ui,message,    amazon-ebs: update-alternatives: using /usr/share/icons/Adwaita/cursor.theme to provide /usr/share/icons/default/index.theme (x-cursor-theme) in auto mode
+1493958571,,ui,message,    amazon-ebs: Setting up libgtk2.0-0:amd64 (2.24.30-4ubuntu3) ...
+1493958571,,ui,message,    amazon-ebs: Setting up ca-certificates-java (20160321) ...
+1493958574,,ui,message,    amazon-ebs: Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Comodo_Secure_Services_root.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:StartCom_Certification_Authority_2.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:AffirmTrust_Commercial.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:TWCA_Global_Root_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Universal_CA_2.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Starfield_Class_2_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:WoSign.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Staat_der_Nederlanden_Root_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:ApplicationCA_-_Japanese_Government.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Secure_Global_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Swisscom_Root_CA_2.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Juur-SK.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Visa_eCommerce_Root.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:thawte_Primary_Root_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:DigiCert_Trusted_Root_G4.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:AddTrust_Low-Value_Services_Root.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:ACCVRAIZ1.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:QuoVadis_Root_CA_3_G3.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:SwissSign_Platinum_CA_-_G2.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:ComSign_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:DigiCert_Assured_ID_Root_G3.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:S-TRUST_Universal_Root_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Global_CA.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:IGC_A.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+1493958574,,ui,message,    amazon-ebs: Adding debian:Certinomis_-_Autorité_Racine.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:AddTrust_Public_Services_Root.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Swisscom_Root_EV_CA_2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:COMODO_Certification_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:ePKI_Root_Certification_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:EE_Certification_Centre_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:DigiCert_Global_Root_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:SecureSign_RootCA11.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Go_Daddy_Class_2_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:certSIGN_ROOT_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:DigiCert_Assured_ID_Root_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Buypass_Class_2_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:TWCA_Root_Certification_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:QuoVadis_Root_CA_3.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:CNNIC_ROOT.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:COMODO_ECC_Certification_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:DigiCert_Global_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:TURKTRUST_Certificate_Services_Provider_Root_2007.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:GlobalSign_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Cybertrust_Global_Root.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:TÜRKTRUST_Elektronik_Sertifika_Hizmet_Sağlayıcısı_H6.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Network_Solutions_Certificate_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:China_Internet_Network_Information_Center_EV_Certificates_Root.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Comodo_AAA_Services_root.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority_-_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:StartCom_Certification_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Certinomis_-_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:E-Tugra_Certification_Authority.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Trustis_FPS_Root_CA.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:CA_Disig_Root_R2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:AC_Raíz_Certicámara_S.A..pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Camerfirma_Global_Chambersign_Root.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:QuoVadis_Root_CA_2_G3.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority_-_G2.pem
+1493958575,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:UTN_USERFirst_Email_Root_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Universal_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:DST_ACES_CA_X6.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:QuoVadis_Root_CA_2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Security_Communication_Root_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:EC-ACC.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:EBG_Elektronik_Sertifika_Hizmet_Sağlayıcısı.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Actalis_Authentication_Root_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:WellsSecure_Public_Root_Certificate_Authority.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Baltimore_CyberTrust_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:XRamp_Global_CA_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:NetLock_Notary_=Class_A=_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Security_Communication_EV_RootCA1.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Sonera_Class_2_Root_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:NetLock_Business_=Class_B=_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Certplus_Class_2_Primary_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:SwissSign_Gold_CA_-_G2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Atos_TrustedRoot_2011.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Certigna.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:GlobalSign_Root_CA_-_R3.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Taiwan_GRCA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:CA_WoSign_ECC_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:AddTrust_Qualified_Certificates_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Sonera_Class_1_Root_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Equifax_Secure_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:AffirmTrust_Premium.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Equifax_Secure_eBusiness_CA_1.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:USERTrust_RSA_Certification_Authority.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:NetLock_Qualified_=Class_QA=_Root.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:WoSign_China.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Equifax_Secure_Global_eBusiness_CA.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:AffirmTrust_Networking.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Global_CA_2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:CFCA_EV_ROOT.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:TC_TrustCenter_Class_3_CA_II.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Certification_Authority_of_WoSign_G2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Global_Chambersign_Root_-_2008.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:USERTrust_ECC_Certification_Authority.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G2.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:CA_Disig.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:AffirmTrust_Premium_ECC.pem
+1493958576,,ui,message,    amazon-ebs: Adding debian:Certum_Root_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:QuoVadis_Root_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:COMODO_RSA_Certification_Authority.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Buypass_Class_3_Root_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Swisscom_Root_CA_1.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Microsec_e-Szigno_Root_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:SecureTrust_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:QuoVadis_Root_CA_1_G3.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Primary_Certification_Authority.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Camerfirma_Chambers_of_Commerce_Root.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Izenpe.com.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Deutsche_Telekom_Root_CA_2.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:GlobalSign_Root_CA_-_R2.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Security_Communication_RootCA2.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:SwissSign_Silver_CA_-_G2.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:AddTrust_External_Root.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:S-TRUST_Authentication_and_Encryption_Root_CA_2005_PN.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:UTN_USERFirst_Hardware_Root_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:DigiCert_Global_Root_G3.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:thawte_Primary_Root_CA_-_G3.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:TeliaSonera_Root_CA_v1.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:Entrust_Root_Certification_Authority.pem
+1493958577,,ui,message,    amazon-ebs: Adding debian:DigiCert_Assured_ID_Root_CA.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:PSCProcert.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Hongkong_Post_Root_CA_1.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Root_CA_Generalitat_Valenciana.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:DST_Root_CA_X3.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:StartCom_Certification_Authority_G2.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:thawte_Primary_Root_CA_-_G2.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:CA_Disig_Root_R1.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Certum_Trusted_Network_CA.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:ACEDICOM_Root.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:TÜRKTRUST_Elektronik_Sertifika_Hizmet_Sağlayıcısı_H5.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Comodo_Trusted_Services_root.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:TÜBİTAK_UEKAE_Kök_Sertifika_Hizmet_Sağlayıcısı_-_Sürüm_3.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:NetLock_Express_=Class_C=_Root.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:RSA_Security_2048_v3.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:Buypass_Class_2_CA_1.pem
+1493958578,,ui,message,    amazon-ebs: Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+1493958578,,ui,message,    amazon-ebs: done.
+1493958578,,ui,message,    amazon-ebs: Setting up libgail18:amd64 (2.24.30-4ubuntu3) ...
+1493958578,,ui,message,    amazon-ebs: Setting up libgail-common:amd64 (2.24.30-4ubuntu3) ...
+1493958578,,ui,message,    amazon-ebs: Setting up humanity-icon-theme (0.6.11.1) ...
+1493958579,,ui,message,    amazon-ebs: Setting up gconf-service (3.2.6-3ubuntu7) ...
+1493958579,,ui,message,    amazon-ebs: Setting up openjdk-8-jre:amd64 (8u121-b13-0ubuntu1.16.10.2) ...
+1493958579,,ui,message,    amazon-ebs: update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/policytool to provide /usr/bin/policytool (policytool) in auto mode
+1493958579,,ui,message,    amazon-ebs: Setting up libgtk2.0-bin (2.24.30-4ubuntu3) ...
+1493958579,,ui,message,    amazon-ebs: Setting up gconf2 (3.2.6-3ubuntu7) ...
+1493958580,,ui,message,    amazon-ebs: Setting up ubuntu-mono (16.10+16.10.20161024-0ubuntu1) ...
+1493958580,,ui,message,    amazon-ebs: Setting up libgnomevfs2-common (1:2.24.4-6.1ubuntu2) ...
+1493958580,,ui,message,    amazon-ebs: Setting up libgnomevfs2-0:amd64 (1:2.24.4-6.1ubuntu2) ...
+1493958580,,ui,message,    amazon-ebs: Setting up libgnome2-common (2.32.1-5ubuntu1) ...
+1493958580,,ui,message,    amazon-ebs: Setting up libgnome-2-0:amd64 (2.32.1-5ubuntu1) ...
+1493958580,,ui,message,    amazon-ebs: Processing triggers for libc-bin (2.24-3ubuntu2) ...
+1493958580,,ui,message,    amazon-ebs: Processing triggers for ureadahead (0.100.0-19) ...
+1493958581,,ui,message,    amazon-ebs: Processing triggers for systemd (231-9ubuntu3) ...
+1493958581,,ui,message,    amazon-ebs: Processing triggers for libgdk-pixbuf2.0-0:amd64 (2.34.0-1ubuntu2) ...
+1493958581,,ui,message,    amazon-ebs: Processing triggers for ca-certificates (20160104ubuntu1) ...
+1493958581,,ui,message,    amazon-ebs: Updating certificates in /etc/ssl/certs...
+1493958583,,ui,message,    amazon-ebs: 0 added%!(PACKER_COMMA) 0 removed; done.
+1493958583,,ui,message,    amazon-ebs: Running hooks in /etc/ca-certificates/update.d...
+1493958584,,ui,message,    amazon-ebs:
+1493958586,,ui,message,    amazon-ebs: done.
+1493958586,,ui,message,    amazon-ebs: done.
+1493958592,,ui,message,    amazon-ebs: --2017-05-05 04:29:51--  https://s3-eu-west-1.amazonaws.com/gofore-aws-training-artifacts/dropwizard-example-26.zip
+1493958592,,ui,message,    amazon-ebs: Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 52.218.49.92
+1493958592,,ui,message,    amazon-ebs: Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.49.92|:443... connected.
+1493958592,,ui,message,    amazon-ebs: HTTP request sent%!(PACKER_COMMA) awaiting response... 200 OK
+1493958592,,ui,message,    amazon-ebs: Length: 26184791 (25M) [application/zip]
+1493958592,,ui,message,    amazon-ebs: Saving to: ‘/opt/dropwizard-example/dropwizard-example-26.zip’
+1493958592,,ui,message,    amazon-ebs:
+1493958593,,ui,message,    amazon-ebs: 0K .......... .......... .......... .......... ..........  0% 24.0M 1s
+1493958593,,ui,message,    amazon-ebs: 50K .......... .......... .......... .......... ..........  0% 44.1M 1s
+1493958593,,ui,message,    amazon-ebs: 100K .......... .......... .......... .......... ..........  0% 44.6M 1s
+1493958593,,ui,message,    amazon-ebs: 150K .......... .......... .......... .......... ..........  0% 49.5M 1s
+1493958593,,ui,message,    amazon-ebs: 200K .......... .......... .......... .......... ..........  0% 34.1M 1s
+1493958593,,ui,message,    amazon-ebs: 250K .......... .......... .......... .......... ..........  1% 2.88M 2s
+1493958593,,ui,message,    amazon-ebs: 300K .......... .......... .......... .......... ..........  1%  331M 2s
+1493958593,,ui,message,    amazon-ebs: 350K .......... .......... .......... .......... ..........  1%  149M 2s
+1493958593,,ui,message,    amazon-ebs: 400K .......... .......... .......... .......... ..........  1%  146M 1s
+1493958593,,ui,message,    amazon-ebs: 450K .......... .......... .......... .......... ..........  1%  181M 1s
+1493958593,,ui,message,    amazon-ebs: 500K .......... .......... .......... .......... ..........  2%  147M 1s
+1493958593,,ui,message,    amazon-ebs: 550K .......... .......... .......... .......... ..........  2%  111M 1s
+1493958593,,ui,message,    amazon-ebs: 600K .......... .......... .......... .......... ..........  2% 85.4M 1s
+1493958593,,ui,message,    amazon-ebs: 650K .......... .......... .......... .......... ..........  2% 87.9M 1s
+1493958593,,ui,message,    amazon-ebs: 700K .......... .......... .......... .......... ..........  2% 86.7M 1s
+1493958593,,ui,message,    amazon-ebs: 750K .......... .......... .......... .......... ..........  3% 2.88M 1s
+1493958593,,ui,message,    amazon-ebs: 800K .......... .......... .......... .......... ..........  3% 46.1M 1s
+1493958593,,ui,message,    amazon-ebs: 850K .......... .......... .......... .......... ..........  3% 47.4M 1s
+1493958593,,ui,message,    amazon-ebs: 900K .......... .......... .......... .......... ..........  3% 51.1M 1s
+1493958593,,ui,message,    amazon-ebs: 950K .......... .......... .......... .......... ..........  3% 2.80M 2s
+1493958593,,ui,message,    amazon-ebs: 1000K .......... .......... .......... .......... ..........  4% 41.6M 2s
+1493958593,,ui,message,    amazon-ebs: 1050K .......... .......... .......... .......... ..........  4% 40.1M 1s
+1493958593,,ui,message,    amazon-ebs: 1100K .......... .......... .......... .......... ..........  4% 2.84M 2s
+1493958593,,ui,message,    amazon-ebs: 1150K .......... .......... .......... .......... ..........  4%  319M 2s
+1493958593,,ui,message,    amazon-ebs: 1200K .......... .......... .......... .......... ..........  4%  309M 2s
+1493958593,,ui,message,    amazon-ebs: 1250K .......... .......... .......... .......... ..........  5%  306M 2s
+1493958593,,ui,message,    amazon-ebs: 1300K .......... .......... .......... .......... ..........  5%  332M 2s
+1493958593,,ui,message,    amazon-ebs: 1350K .......... .......... .......... .......... ..........  5%  190M 1s
+1493958593,,ui,message,    amazon-ebs: 1400K .......... .......... .......... .......... ..........  5%  158M 1s
+1493958593,,ui,message,    amazon-ebs: 1450K .......... .......... .......... .......... ..........  5%  199M 1s
+1493958593,,ui,message,    amazon-ebs: 1500K .......... .......... .......... .......... ..........  6%  168M 1s
+1493958593,,ui,message,    amazon-ebs: 1550K .......... .......... .......... .......... ..........  6%  173M 1s
+1493958593,,ui,message,    amazon-ebs: 1600K .......... .......... .......... .......... ..........  6%  173M 1s
+1493958593,,ui,message,    amazon-ebs: 1650K .......... .......... .......... .......... ..........  6%  194M 1s
+1493958593,,ui,message,    amazon-ebs: 1700K .......... .......... .......... .......... ..........  6%  185M 1s
+1493958593,,ui,message,    amazon-ebs: 1750K .......... .......... .......... .......... ..........  7%  171M 1s
+1493958593,,ui,message,    amazon-ebs: 1800K .......... .......... .......... .......... ..........  7%  149M 1s
+1493958593,,ui,message,    amazon-ebs: 1850K .......... .......... .......... .......... ..........  7%  170M 1s
+1493958593,,ui,message,    amazon-ebs: 1900K .......... .......... .......... .......... ..........  7% 2.89M 1s
+1493958593,,ui,message,    amazon-ebs: 1950K .......... .......... .......... .......... ..........  7% 66.3M 1s
+1493958593,,ui,message,    amazon-ebs: 2000K .......... .......... .......... .......... ..........  8% 34.9M 1s
+1493958593,,ui,message,    amazon-ebs: 2050K .......... .......... .......... .......... ..........  8% 34.7M 1s
+1493958593,,ui,message,    amazon-ebs: 2100K .......... .......... .......... .......... ..........  8% 2.22M 1s
+1493958593,,ui,message,    amazon-ebs: 2150K .......... .......... .......... .......... ..........  8% 41.1M 1s
+1493958593,,ui,message,    amazon-ebs: 2200K .......... .......... .......... .......... ..........  8% 43.3M 1s
+1493958593,,ui,message,    amazon-ebs: 2250K .......... .......... .......... .......... ..........  8% 2.91M 2s
+1493958593,,ui,message,    amazon-ebs: 2300K .......... .......... .......... .......... ..........  9%  317M 1s
+1493958593,,ui,message,    amazon-ebs: 2350K .......... .......... .......... .......... ..........  9%  341M 1s
+1493958593,,ui,message,    amazon-ebs: 2400K .......... .......... .......... .......... ..........  9%  316M 1s
+1493958593,,ui,message,    amazon-ebs: 2450K .......... .......... .......... .......... ..........  9%  231M 1s
+1493958593,,ui,message,    amazon-ebs: 2500K .......... .......... .......... .......... ..........  9%  154M 1s
+1493958593,,ui,message,    amazon-ebs: 2550K .......... .......... .......... .......... .......... 10%  196M 1s
+1493958593,,ui,message,    amazon-ebs: 2600K .......... .......... .......... .......... .......... 10%  184M 1s
+1493958593,,ui,message,    amazon-ebs: 2650K .......... .......... .......... .......... .......... 10%  172M 1s
+1493958593,,ui,message,    amazon-ebs: 2700K .......... .......... .......... .......... .......... 10%  159M 1s
+1493958593,,ui,message,    amazon-ebs: 2750K .......... .......... .......... .......... .......... 10%  155M 1s
+1493958593,,ui,message,    amazon-ebs: 2800K .......... .......... .......... .......... .......... 11%  164M 1s
+1493958593,,ui,message,    amazon-ebs: 2850K .......... .......... .......... .......... .......... 11%  181M 1s
+1493958593,,ui,message,    amazon-ebs: 2900K .......... .......... .......... .......... .......... 11%  158M 1s
+1493958593,,ui,message,    amazon-ebs: 2950K .......... .......... .......... .......... .......... 11% 2.86M 1s
+1493958593,,ui,message,    amazon-ebs: 3000K .......... .......... .......... .......... .......... 11% 92.3M 1s
+1493958593,,ui,message,    amazon-ebs: 3050K .......... .......... .......... .......... .......... 12% 63.8M 1s
+1493958593,,ui,message,    amazon-ebs: 3100K .......... .......... .......... .......... .......... 12% 43.8M 1s
+1493958593,,ui,message,    amazon-ebs: 3150K .......... .......... .......... .......... .......... 12% 2.64M 1s
+1493958593,,ui,message,    amazon-ebs: 3200K .......... .......... .......... .......... .......... 12%  268M 1s
+1493958593,,ui,message,    amazon-ebs: 3250K .......... .......... .......... .......... .......... 12%  261M 1s
+1493958593,,ui,message,    amazon-ebs: 3300K .......... .......... .......... .......... .......... 13%  201M 1s
+1493958593,,ui,message,    amazon-ebs: 3350K .......... .......... .......... .......... .......... 13%  184M 1s
+1493958593,,ui,message,    amazon-ebs: 3400K .......... .......... .......... .......... .......... 13%  189M 1s
+1493958593,,ui,message,    amazon-ebs: 3450K .......... .......... .......... .......... .......... 13%  192M 1s
+1493958593,,ui,message,    amazon-ebs: 3500K .......... .......... .......... .......... .......... 13%  199M 1s
+1493958593,,ui,message,    amazon-ebs: 3550K .......... .......... .......... .......... .......... 14%  163M 1s
+1493958593,,ui,message,    amazon-ebs: 3600K .......... .......... .......... .......... .......... 14%  192M 1s
+1493958593,,ui,message,    amazon-ebs: 3650K .......... .......... .......... .......... .......... 14%  165M 1s
+1493958593,,ui,message,    amazon-ebs: 3700K .......... .......... .......... .......... .......... 14% 2.89M 1s
+1493958593,,ui,message,    amazon-ebs: 3750K .......... .......... .......... .......... .......... 14% 64.2M 1s
+1493958593,,ui,message,    amazon-ebs: 3800K .......... .......... .......... .......... .......... 15% 44.7M 1s
+1493958593,,ui,message,    amazon-ebs: 3850K .......... .......... .......... .......... .......... 15% 48.4M 1s
+1493958593,,ui,message,    amazon-ebs: 3900K .......... .......... .......... .......... .......... 15% 2.68M 1s
+1493958593,,ui,message,    amazon-ebs: 3950K .......... .......... .......... .......... .......... 15%  347M 1s
+1493958593,,ui,message,    amazon-ebs: 4000K .......... .......... .......... .......... .......... 15%  380M 1s
+1493958593,,ui,message,    amazon-ebs: 4050K .......... .......... .......... .......... .......... 16%  200M 1s
+1493958593,,ui,message,    amazon-ebs: 4100K .......... .......... .......... .......... .......... 16%  205M 1s
+1493958593,,ui,message,    amazon-ebs: 4150K .......... .......... .......... .......... .......... 16%  173M 1s
+1493958593,,ui,message,    amazon-ebs: 4200K .......... .......... .......... .......... .......... 16%  192M 1s
+1493958593,,ui,message,    amazon-ebs: 4250K .......... .......... .......... .......... .......... 16%  213M 1s
+1493958593,,ui,message,    amazon-ebs: 4300K .......... .......... .......... .......... .......... 17%  204M 1s
+1493958593,,ui,message,    amazon-ebs: 4350K .......... .......... .......... .......... .......... 17%  195M 1s
+1493958593,,ui,message,    amazon-ebs: 4400K .......... .......... .......... .......... .......... 17%  216M 1s
+1493958593,,ui,message,    amazon-ebs: 4450K .......... .......... .......... .......... .......... 17%  187M 1s
+1493958593,,ui,message,    amazon-ebs: 4500K .......... .......... .......... .......... .......... 17%  186M 1s
+1493958593,,ui,message,    amazon-ebs: 4550K .......... .......... .......... .......... .......... 17% 2.81M 1s
+1493958593,,ui,message,    amazon-ebs: 4600K .......... .......... .......... .......... .......... 18% 54.8M 1s
+1493958593,,ui,message,    amazon-ebs: 4650K .......... .......... .......... .......... .......... 18% 24.0M 1s
+1493958593,,ui,message,    amazon-ebs: 4700K .......... .......... .......... .......... .......... 18% 2.80M 1s
+1493958593,,ui,message,    amazon-ebs: 4750K .......... .......... .......... .......... .......... 18% 44.0M 1s
+1493958593,,ui,message,    amazon-ebs: 4800K .......... .......... .......... .......... .......... 18% 34.9M 1s
+1493958593,,ui,message,    amazon-ebs: 4850K .......... .......... .......... .......... .......... 19% 2.61M 1s
+1493958593,,ui,message,    amazon-ebs: 4900K .......... .......... .......... .......... .......... 19% 2.55M 1s
+1493958593,,ui,message,    amazon-ebs: 4950K .......... .......... .......... .......... .......... 19%  333M 1s
+1493958593,,ui,message,    amazon-ebs: 5000K .......... .......... .......... .......... .......... 19%  397M 1s
+1493958593,,ui,message,    amazon-ebs: 5050K .......... .......... .......... .......... .......... 19%  391M 1s
+1493958593,,ui,message,    amazon-ebs: 5100K .......... .......... .......... .......... .......... 20%  361M 1s
+1493958593,,ui,message,    amazon-ebs: 5150K .......... .......... .......... .......... .......... 20%  435M 1s
+1493958593,,ui,message,    amazon-ebs: 5200K .......... .......... .......... .......... .......... 20%  341M 1s
+1493958593,,ui,message,    amazon-ebs: 5250K .......... .......... .......... .......... .......... 20%  380M 1s
+1493958593,,ui,message,    amazon-ebs: 5300K .......... .......... .......... .......... .......... 20%  301M 1s
+1493958593,,ui,message,    amazon-ebs: 5350K .......... .......... .......... .......... .......... 21%  234M 1s
+1493958593,,ui,message,    amazon-ebs: 5400K .......... .......... .......... .......... .......... 21%  242M 1s
+1493958593,,ui,message,    amazon-ebs: 5450K .......... .......... .......... .......... .......... 21%  207M 1s
+1493958593,,ui,message,    amazon-ebs: 5500K .......... .......... .......... .......... .......... 21%  259M 1s
+1493958593,,ui,message,    amazon-ebs: 5550K .......... .......... .......... .......... .......... 21%  254M 1s
+1493958593,,ui,message,    amazon-ebs: 5600K .......... .......... .......... .......... .......... 22%  175M 1s
+1493958593,,ui,message,    amazon-ebs: 5650K .......... .......... .......... .......... .......... 22%  173M 1s
+1493958593,,ui,message,    amazon-ebs: 5700K .......... .......... .......... .......... .......... 22%  179M 1s
+1493958593,,ui,message,    amazon-ebs: 5750K .......... .......... .......... .......... .......... 22% 2.69M 1s
+1493958593,,ui,message,    amazon-ebs: 5800K .......... .......... .......... .......... .......... 22% 38.6M 1s
+1493958593,,ui,message,    amazon-ebs: 5850K .......... .......... .......... .......... .......... 23% 2.62M 1s
+1493958593,,ui,message,    amazon-ebs: 5900K .......... .......... .......... .......... .......... 23% 37.9M 1s
+1493958593,,ui,message,    amazon-ebs: 5950K .......... .......... .......... .......... .......... 23% 2.69M 1s
+1493958593,,ui,message,    amazon-ebs: 6000K .......... .......... .......... .......... .......... 23% 24.9M 1s
+1493958593,,ui,message,    amazon-ebs: 6050K .......... .......... .......... .......... .......... 23% 2.67M 1s
+1493958593,,ui,message,    amazon-ebs: 6100K .......... .......... .......... .......... .......... 24% 66.8M 1s
+1493958593,,ui,message,    amazon-ebs: 6150K .......... .......... .......... .......... .......... 24% 68.5M 1s
+1493958593,,ui,message,    amazon-ebs: 6200K .......... .......... .......... .......... .......... 24% 68.4M 1s
+1493958593,,ui,message,    amazon-ebs: 6250K .......... .......... .......... .......... .......... 24% 68.8M 1s
+1493958593,,ui,message,    amazon-ebs: 6300K .......... .......... .......... .......... .......... 24% 2.74M 1s
+1493958593,,ui,message,    amazon-ebs: 6350K .......... .......... .......... .......... .......... 25%  378M 1s
+1493958593,,ui,message,    amazon-ebs: 6400K .......... .......... .......... .......... .......... 25%  433M 1s
+1493958593,,ui,message,    amazon-ebs: 6450K .......... .......... .......... .......... .......... 25%  383M 1s
+1493958593,,ui,message,    amazon-ebs: 6500K .......... .......... .......... .......... .......... 25%  298M 1s
+1493958593,,ui,message,    amazon-ebs: 6550K .......... .......... .......... .......... .......... 25%  187M 1s
+1493958593,,ui,message,    amazon-ebs: 6600K .......... .......... .......... .......... .......... 26%  184M 1s
+1493958593,,ui,message,    amazon-ebs: 6650K .......... .......... .......... .......... .......... 26%  179M 1s
+1493958593,,ui,message,    amazon-ebs: 6700K .......... .......... .......... .......... .......... 26%  175M 1s
+1493958593,,ui,message,    amazon-ebs: 6750K .......... .......... .......... .......... .......... 26%  191M 1s
+1493958593,,ui,message,    amazon-ebs: 6800K .......... .......... .......... .......... .......... 26%  218M 1s
+1493958593,,ui,message,    amazon-ebs: 6850K .......... .......... .......... .......... .......... 26%  216M 1s
+1493958593,,ui,message,    amazon-ebs: 6900K .......... .......... .......... .......... .......... 27%  195M 1s
+1493958593,,ui,message,    amazon-ebs: 6950K .......... .......... .......... .......... .......... 27%  190M 1s
+1493958593,,ui,message,    amazon-ebs: 7000K .......... .......... .......... .......... .......... 27% 2.76M 1s
+1493958593,,ui,message,    amazon-ebs: 7050K .......... .......... .......... .......... .......... 27% 35.9M 1s
+1493958593,,ui,message,    amazon-ebs: 7100K .......... .......... .......... .......... .......... 27% 36.4M 1s
+1493958593,,ui,message,    amazon-ebs: 7150K .......... .......... .......... .......... .......... 28% 2.63M 1s
+1493958593,,ui,message,    amazon-ebs: 7200K .......... .......... .......... .......... .......... 28% 2.15M 1s
+1493958593,,ui,message,    amazon-ebs: 7250K .......... .......... .......... .......... .......... 28%  264M 1s
+1493958593,,ui,message,    amazon-ebs: 7300K .......... .......... .......... .......... .......... 28%  351M 1s
+1493958593,,ui,message,    amazon-ebs: 7350K .......... .......... .......... .......... .......... 28%  406M 1s
+1493958593,,ui,message,    amazon-ebs: 7400K .......... .......... .......... .......... .......... 29%  262M 1s
+1493958593,,ui,message,    amazon-ebs: 7450K .......... .......... .......... .......... .......... 29%  163M 1s
+1493958593,,ui,message,    amazon-ebs: 7500K .......... .......... .......... .......... .......... 29%  136M 1s
+1493958593,,ui,message,    amazon-ebs: 7550K .......... .......... .......... .......... .......... 29%  159M 1s
+1493958593,,ui,message,    amazon-ebs: 7600K .......... .......... .......... .......... .......... 29%  159M 1s
+1493958593,,ui,message,    amazon-ebs: 7650K .......... .......... .......... .......... .......... 30%  203M 1s
+1493958593,,ui,message,    amazon-ebs: 7700K .......... .......... .......... .......... .......... 30%  164M 1s
+1493958593,,ui,message,    amazon-ebs: 7750K .......... .......... .......... .......... .......... 30%  168M 1s
+1493958593,,ui,message,    amazon-ebs: 7800K .......... .......... .......... .......... .......... 30%  186M 1s
+1493958593,,ui,message,    amazon-ebs: 7850K .......... .......... .......... .......... .......... 30%  169M 1s
+1493958593,,ui,message,    amazon-ebs: 7900K .......... .......... .......... .......... .......... 31% 2.73M 1s
+1493958593,,ui,message,    amazon-ebs: 7950K .......... .......... .......... .......... .......... 31%  348M 1s
+1493958593,,ui,message,    amazon-ebs: 8000K .......... .......... .......... .......... .......... 31%  355M 1s
+1493958593,,ui,message,    amazon-ebs: 8050K .......... .......... .......... .......... .......... 31%  419M 1s
+1493958593,,ui,message,    amazon-ebs: 8100K .......... .......... .......... .......... .......... 31%  212M 1s
+1493958593,,ui,message,    amazon-ebs: 8150K .......... .......... .......... .......... .......... 32%  149M 1s
+1493958593,,ui,message,    amazon-ebs: 8200K .......... .......... .......... .......... .......... 32%  173M 1s
+1493958593,,ui,message,    amazon-ebs: 8250K .......... .......... .......... .......... .......... 32%  202M 1s
+1493958593,,ui,message,    amazon-ebs: 8300K .......... .......... .......... .......... .......... 32% 56.9M 1s
+1493958593,,ui,message,    amazon-ebs: 8350K .......... .......... .......... .......... .......... 32% 2.73M 1s
+1493958593,,ui,message,    amazon-ebs: 8400K .......... .......... .......... .......... .......... 33%  358M 1s
+1493958593,,ui,message,    amazon-ebs: 8450K .......... .......... .......... .......... .......... 33%  334M 1s
+1493958593,,ui,message,    amazon-ebs: 8500K .......... .......... .......... .......... .......... 33%  390M 1s
+1493958593,,ui,message,    amazon-ebs: 8550K .......... .......... .......... .......... .......... 33%  469M 1s
+1493958593,,ui,message,    amazon-ebs: 8600K .......... .......... .......... .......... .......... 33%  369M 1s
+1493958593,,ui,message,    amazon-ebs: 8650K .......... .......... .......... .......... .......... 34%  285M 1s
+1493958593,,ui,message,    amazon-ebs: 8700K .......... .......... .......... .......... .......... 34%  223M 1s
+1493958593,,ui,message,    amazon-ebs: 8750K .......... .......... .......... .......... .......... 34%  166M 1s
+1493958593,,ui,message,    amazon-ebs: 8800K .......... .......... .......... .......... .......... 34%  176M 1s
+1493958593,,ui,message,    amazon-ebs: 8850K .......... .......... .......... .......... .......... 34%  180M 1s
+1493958593,,ui,message,    amazon-ebs: 8900K .......... .......... .......... .......... .......... 35%  238M 1s
+1493958593,,ui,message,    amazon-ebs: 8950K .......... .......... .......... .......... .......... 35%  218M 1s
+1493958593,,ui,message,    amazon-ebs: 9000K .......... .......... .......... .......... .......... 35%  185M 1s
+1493958593,,ui,message,    amazon-ebs: 9050K .......... .......... .......... .......... .......... 35% 2.70M 1s
+1493958593,,ui,message,    amazon-ebs: 9100K .......... .......... .......... .......... .......... 35% 69.5M 1s
+1493958593,,ui,message,    amazon-ebs: 9150K .......... .......... .......... .......... .......... 35% 69.8M 1s
+1493958593,,ui,message,    amazon-ebs: 9200K .......... .......... .......... .......... .......... 36% 66.1M 1s
+1493958593,,ui,message,    amazon-ebs: 9250K .......... .......... .......... .......... .......... 36% 2.92M 1s
+1493958593,,ui,message,    amazon-ebs: 9300K .......... .......... .......... .......... .......... 36%  390M 1s
+1493958593,,ui,message,    amazon-ebs: 9350K .......... .......... .......... .......... .......... 36%  364M 1s
+1493958593,,ui,message,    amazon-ebs: 9400K .......... .......... .......... .......... .......... 36%  300M 1s
+1493958593,,ui,message,    amazon-ebs: 9450K .......... .......... .......... .......... .......... 37%  386M 1s
+1493958593,,ui,message,    amazon-ebs: 9500K .......... .......... .......... .......... .......... 37%  425M 1s
+1493958593,,ui,message,    amazon-ebs: 9550K .......... .......... .......... .......... .......... 37%  427M 1s
+1493958593,,ui,message,    amazon-ebs: 9600K .......... .......... .......... .......... .......... 37%  363M 1s
+1493958593,,ui,message,    amazon-ebs: 9650K .......... .......... .......... .......... .......... 37%  439M 1s
+1493958593,,ui,message,    amazon-ebs: 9700K .......... .......... .......... .......... .......... 38%  395M 1s
+1493958593,,ui,message,    amazon-ebs: 9750K .......... .......... .......... .......... .......... 38%  424M 1s
+1493958593,,ui,message,    amazon-ebs: 9800K .......... .......... .......... .......... .......... 38%  321M 1s
+1493958593,,ui,message,    amazon-ebs: 9850K .......... .......... .......... .......... .......... 38%  416M 1s
+1493958593,,ui,message,    amazon-ebs: 9900K .......... .......... .......... .......... .......... 38%  431M 1s
+1493958593,,ui,message,    amazon-ebs: 9950K .......... .......... .......... .......... .......... 39%  409M 1s
+1493958593,,ui,message,    amazon-ebs: 10000K .......... .......... .......... .......... .......... 39%  386M 1s
+1493958593,,ui,message,    amazon-ebs: 10050K .......... .......... .......... .......... .......... 39%  361M 1s
+1493958593,,ui,message,    amazon-ebs: 10100K .......... .......... .......... .......... .......... 39%  409M 1s
+1493958593,,ui,message,    amazon-ebs: 10150K .......... .......... .......... .......... .......... 39%  417M 1s
+1493958593,,ui,message,    amazon-ebs: 10200K .......... .......... .......... .......... .......... 40%  310M 1s
+1493958593,,ui,message,    amazon-ebs: 10250K .......... .......... .......... .......... .......... 40%  360M 1s
+1493958593,,ui,message,    amazon-ebs: 10300K .......... .......... .......... .......... .......... 40%  437M 1s
+1493958593,,ui,message,    amazon-ebs: 10350K .......... .......... .......... .......... .......... 40%  418M 1s
+1493958593,,ui,message,    amazon-ebs: 10400K .......... .......... .......... .......... .......... 40%  373M 1s
+1493958593,,ui,message,    amazon-ebs: 10450K .......... .......... .......... .......... .......... 41%  359M 1s
+1493958593,,ui,message,    amazon-ebs: 10500K .......... .......... .......... .......... .......... 41%  379M 1s
+1493958593,,ui,message,    amazon-ebs: 10550K .......... .......... .......... .......... .......... 41%  392M 1s
+1493958593,,ui,message,    amazon-ebs: 10600K .......... .......... .......... .......... .......... 41%  323M 1s
+1493958593,,ui,message,    amazon-ebs: 10650K .......... .......... .......... .......... .......... 41%  441M 1s
+1493958593,,ui,message,    amazon-ebs: 10700K .......... .......... .......... .......... .......... 42%  397M 1s
+1493958593,,ui,message,    amazon-ebs: 10750K .......... .......... .......... .......... .......... 42% 2.89M 1s
+1493958593,,ui,message,    amazon-ebs: 10800K .......... .......... .......... .......... .......... 42% 65.8M 1s
+1493958593,,ui,message,    amazon-ebs: 10850K .......... .......... .......... .......... .......... 42% 71.8M 1s
+1493958593,,ui,message,    amazon-ebs: 10900K .......... .......... .......... .......... .......... 42% 69.2M 1s
+1493958593,,ui,message,    amazon-ebs: 10950K .......... .......... .......... .......... .......... 43% 72.2M 1s
+1493958593,,ui,message,    amazon-ebs: 11000K .......... .......... .......... .......... .......... 43% 2.85M 1s
+1493958593,,ui,message,    amazon-ebs: 11050K .......... .......... .......... .......... .......... 43%  320M 1s
+1493958593,,ui,message,    amazon-ebs: 11100K .......... .......... .......... .......... .......... 43%  346M 1s
+1493958593,,ui,message,    amazon-ebs: 11150K .......... .......... .......... .......... .......... 43%  416M 1s
+1493958593,,ui,message,    amazon-ebs: 11200K .......... .......... .......... .......... .......... 43%  391M 1s
+1493958593,,ui,message,    amazon-ebs: 11250K .......... .......... .......... .......... .......... 44%  423M 1s
+1493958593,,ui,message,    amazon-ebs: 11300K .......... .......... .......... .......... .......... 44%  444M 1s
+1493958593,,ui,message,    amazon-ebs: 11350K .......... .......... .......... .......... .......... 44%  424M 1s
+1493958593,,ui,message,    amazon-ebs: 11400K .......... .......... .......... .......... .......... 44%  347M 1s
+1493958593,,ui,message,    amazon-ebs: 11450K .......... .......... .......... .......... .......... 44%  431M 1s
+1493958593,,ui,message,    amazon-ebs: 11500K .......... .......... .......... .......... .......... 45%  408M 1s
+1493958593,,ui,message,    amazon-ebs: 11550K .......... .......... .......... .......... .......... 45%  446M 1s
+1493958593,,ui,message,    amazon-ebs: 11600K .......... .......... .......... .......... .......... 45%  305M 1s
+1493958593,,ui,message,    amazon-ebs: 11650K .......... .......... .......... .......... .......... 45%  403M 1s
+1493958593,,ui,message,    amazon-ebs: 11700K .......... .......... .......... .......... .......... 45%  403M 1s
+1493958593,,ui,message,    amazon-ebs: 11750K .......... .......... .......... .......... .......... 46%  432M 1s
+1493958593,,ui,message,    amazon-ebs: 11800K .......... .......... .......... .......... .......... 46%  353M 1s
+1493958593,,ui,message,    amazon-ebs: 11850K .......... .......... .......... .......... .......... 46%  435M 1s
+1493958593,,ui,message,    amazon-ebs: 11900K .......... .......... .......... .......... .......... 46%  425M 1s
+1493958593,,ui,message,    amazon-ebs: 11950K .......... .......... .......... .......... .......... 46%  434M 1s
+1493958593,,ui,message,    amazon-ebs: 12000K .......... .......... .......... .......... .......... 47%  400M 1s
+1493958593,,ui,message,    amazon-ebs: 12050K .......... .......... .......... .......... .......... 47%  391M 1s
+1493958593,,ui,message,    amazon-ebs: 12100K .......... .......... .......... .......... .......... 47%  412M 1s
+1493958593,,ui,message,    amazon-ebs: 12150K .......... .......... .......... .......... .......... 47%  475M 1s
+1493958593,,ui,message,    amazon-ebs: 12200K .......... .......... .......... .......... .......... 47%  383M 1s
+1493958593,,ui,message,    amazon-ebs: 12250K .......... .......... .......... .......... .......... 48%  398M 1s
+1493958593,,ui,message,    amazon-ebs: 12300K .......... .......... .......... .......... .......... 48%  460M 1s
+1493958593,,ui,message,    amazon-ebs: 12350K .......... .......... .......... .......... .......... 48%  363M 1s
+1493958593,,ui,message,    amazon-ebs: 12400K .......... .......... .......... .......... .......... 48%  395M 1s
+1493958593,,ui,message,    amazon-ebs: 12450K .......... .......... .......... .......... .......... 48%  400M 1s
+1493958593,,ui,message,    amazon-ebs: 12500K .......... .......... .......... .......... .......... 49%  466M 1s
+1493958593,,ui,message,    amazon-ebs: 12550K .......... .......... .......... .......... .......... 49%  478M 1s
+1493958593,,ui,message,    amazon-ebs: 12600K .......... .......... .......... .......... .......... 49% 2.84M 1s
+1493958593,,ui,message,    amazon-ebs: 12650K .......... .......... .......... .......... .......... 49% 69.6M 1s
+1493958593,,ui,message,    amazon-ebs: 12700K .......... .......... .......... .......... .......... 49% 71.1M 1s
+1493958593,,ui,message,    amazon-ebs: 12750K .......... .......... .......... .......... .......... 50% 70.3M 1s
+1493958593,,ui,message,    amazon-ebs: 12800K .......... .......... .......... .......... .......... 50% 68.7M 1s
+1493958593,,ui,message,    amazon-ebs: 12850K .......... .......... .......... .......... .......... 50% 2.87M 1s
+1493958593,,ui,message,    amazon-ebs: 12900K .......... .......... .......... .......... .......... 50% 71.3M 1s
+1493958593,,ui,message,    amazon-ebs: 12950K .......... .......... .......... .......... .......... 50% 67.9M 1s
+1493958593,,ui,message,    amazon-ebs: 13000K .......... .......... .......... .......... .......... 51% 65.0M 1s
+1493958593,,ui,message,    amazon-ebs: 13050K .......... .......... .......... .......... .......... 51% 75.3M 1s
+1493958593,,ui,message,    amazon-ebs: 13100K .......... .......... .......... .......... .......... 51% 72.5M 1s
+1493958593,,ui,message,    amazon-ebs: 13150K .......... .......... .......... .......... .......... 51% 2.83M 1s
+1493958593,,ui,message,    amazon-ebs: 13200K .......... .......... .......... .......... .......... 51% 63.1M 1s
+1493958593,,ui,message,    amazon-ebs: 13250K .......... .......... .......... .......... .......... 52% 71.8M 1s
+1493958593,,ui,message,    amazon-ebs: 13300K .......... .......... .......... .......... .......... 52% 74.1M 1s
+1493958593,,ui,message,    amazon-ebs: 13350K .......... .......... .......... .......... .......... 52% 72.6M 1s
+1493958593,,ui,message,    amazon-ebs: 13400K .......... .......... .......... .......... .......... 52% 2.88M 1s
+1493958593,,ui,message,    amazon-ebs: 13450K .......... .......... .......... .......... .......... 52%  434K 1s
+1493958593,,ui,message,    amazon-ebs: 13500K .......... .......... .......... .......... .......... 52% 75.8M 1s
+1493958593,,ui,message,    amazon-ebs: 13550K .......... .......... .......... .......... .......... 53% 58.2M 1s
+1493958593,,ui,message,    amazon-ebs: 13600K .......... .......... .......... .......... .......... 53% 76.0M 1s
+1493958593,,ui,message,    amazon-ebs: 13650K .......... .......... .......... .......... .......... 53% 5.79M 1s
+1493958593,,ui,message,    amazon-ebs: 13700K .......... .......... .......... .......... .......... 53%  384M 1s
+1493958593,,ui,message,    amazon-ebs: 13750K .......... .......... .......... .......... .......... 53% 66.8M 1s
+1493958593,,ui,message,    amazon-ebs: 13800K .......... .......... .......... .......... .......... 54% 77.0M 1s
+1493958593,,ui,message,    amazon-ebs: 13850K .......... .......... .......... .......... .......... 54%  106M 1s
+1493958593,,ui,message,    amazon-ebs: 13900K .......... .......... .......... .......... .......... 54% 95.5M 1s
+1493958593,,ui,message,    amazon-ebs: 13950K .......... .......... .......... .......... .......... 54%  105M 1s
+1493958593,,ui,message,    amazon-ebs: 14000K .......... .......... .......... .......... .......... 54% 84.3M 1s
+1493958593,,ui,message,    amazon-ebs: 14050K .......... .......... .......... .......... .......... 55% 2.91M 1s
+1493958593,,ui,message,    amazon-ebs: 14100K .......... .......... .......... .......... .......... 55%  314M 1s
+1493958593,,ui,message,    amazon-ebs: 14150K .......... .......... .......... .......... .......... 55%  387M 1s
+1493958593,,ui,message,    amazon-ebs: 14200K .......... .......... .......... .......... .......... 55%  246M 1s
+1493958593,,ui,message,    amazon-ebs: 14250K .......... .......... .......... .......... .......... 55%  172M 1s
+1493958593,,ui,message,    amazon-ebs: 14300K .......... .......... .......... .......... .......... 56%  196M 1s
+1493958593,,ui,message,    amazon-ebs: 14350K .......... .......... .......... .......... .......... 56%  179M 1s
+1493958593,,ui,message,    amazon-ebs: 14400K .......... .......... .......... .......... .......... 56%  169M 1s
+1493958593,,ui,message,    amazon-ebs: 14450K .......... .......... .......... .......... .......... 56%  164M 1s
+1493958593,,ui,message,    amazon-ebs: 14500K .......... .......... .......... .......... .......... 56% 93.6M 1s
+1493958593,,ui,message,    amazon-ebs: 14550K .......... .......... .......... .......... .......... 57%  103M 1s
+1493958593,,ui,message,    amazon-ebs: 14600K .......... .......... .......... .......... .......... 57% 81.8M 1s
+1493958593,,ui,message,    amazon-ebs: 14650K .......... .......... .......... .......... .......... 57% 2.84M 1s
+1493958593,,ui,message,    amazon-ebs: 14700K .......... .......... .......... .......... .......... 57% 30.0M 1s
+1493958593,,ui,message,    amazon-ebs: 14750K .......... .......... .......... .......... .......... 57% 27.4M 1s
+1493958593,,ui,message,    amazon-ebs: 14800K .......... .......... .......... .......... .......... 58% 2.67M 1s
+1493958593,,ui,message,    amazon-ebs: 14850K .......... .......... .......... .......... .......... 58% 39.9M 1s
+1493958593,,ui,message,    amazon-ebs: 14900K .......... .......... .......... .......... .......... 58% 2.79M 1s
+1493958593,,ui,message,    amazon-ebs: 14950K .......... .......... .......... .......... .......... 58%  368M 1s
+1493958593,,ui,message,    amazon-ebs: 15000K .......... .......... .......... .......... .......... 58%  295M 1s
+1493958593,,ui,message,    amazon-ebs: 15050K .......... .......... .......... .......... .......... 59%  405M 1s
+1493958593,,ui,message,    amazon-ebs: 15100K .......... .......... .......... .......... .......... 59%  365M 1s
+1493958593,,ui,message,    amazon-ebs: 15150K .......... .......... .......... .......... .......... 59%  405M 1s
+1493958593,,ui,message,    amazon-ebs: 15200K .......... .......... .......... .......... .......... 59%  199M 1s
+1493958593,,ui,message,    amazon-ebs: 15250K .......... .......... .......... .......... .......... 59%  159M 1s
+1493958593,,ui,message,    amazon-ebs: 15300K .......... .......... .......... .......... .......... 60%  203M 1s
+1493958593,,ui,message,    amazon-ebs: 15350K .......... .......... .......... .......... .......... 60%  198M 1s
+1493958593,,ui,message,    amazon-ebs: 15400K .......... .......... .......... .......... .......... 60%  165M 1s
+1493958593,,ui,message,    amazon-ebs: 15450K .......... .......... .......... .......... .......... 60%  212M 1s
+1493958593,,ui,message,    amazon-ebs: 15500K .......... .......... .......... .......... .......... 60%  180M 1s
+1493958593,,ui,message,    amazon-ebs: 15550K .......... .......... .......... .......... .......... 61%  205M 1s
+1493958593,,ui,message,    amazon-ebs: 15600K .......... .......... .......... .......... .......... 61%  194M 1s
+1493958593,,ui,message,    amazon-ebs: 15650K .......... .......... .......... .......... .......... 61%  185M 1s
+1493958593,,ui,message,    amazon-ebs: 15700K .......... .......... .......... .......... .......... 61%  196M 1s
+1493958593,,ui,message,    amazon-ebs: 15750K .......... .......... .......... .......... .......... 61% 2.81M 1s
+1493958593,,ui,message,    amazon-ebs: 15800K .......... .......... .......... .......... .......... 61% 38.1M 1s
+1493958593,,ui,message,    amazon-ebs: 15850K .......... .......... .......... .......... .......... 62% 46.5M 1s
+1493958593,,ui,message,    amazon-ebs: 15900K .......... .......... .......... .......... .......... 62% 2.64M 1s
+1493958593,,ui,message,    amazon-ebs: 15950K .......... .......... .......... .......... .......... 62% 26.5M 1s
+1493958593,,ui,message,    amazon-ebs: 16000K .......... .......... .......... .......... .......... 62% 2.82M 1s
+1493958593,,ui,message,    amazon-ebs: 16050K .......... .......... .......... .......... .......... 62%  252M 1s
+1493958593,,ui,message,    amazon-ebs: 16100K .......... .......... .......... .......... .......... 63%  200M 1s
+1493958593,,ui,message,    amazon-ebs: 16150K .......... .......... .......... .......... .......... 63%  204M 1s
+1493958593,,ui,message,    amazon-ebs: 16200K .......... .......... .......... .......... .......... 63%  180M 1s
+1493958593,,ui,message,    amazon-ebs: 16250K .......... .......... .......... .......... .......... 63%  211M 1s
+1493958593,,ui,message,    amazon-ebs: 16300K .......... .......... .......... .......... .......... 63%  240M 1s
+1493958593,,ui,message,    amazon-ebs: 16350K .......... .......... .......... .......... .......... 64%  212M 1s
+1493958593,,ui,message,    amazon-ebs: 16400K .......... .......... .......... .......... .......... 64%  195M 1s
+1493958593,,ui,message,    amazon-ebs: 16450K .......... .......... .......... .......... .......... 64%  219M 1s
+1493958593,,ui,message,    amazon-ebs: 16500K .......... .......... .......... .......... .......... 64%  210M 1s
+1493958593,,ui,message,    amazon-ebs: 16550K .......... .......... .......... .......... .......... 64%  203M 1s
+1493958593,,ui,message,    amazon-ebs: 16600K .......... .......... .......... .......... .......... 65%  209M 1s
+1493958593,,ui,message,    amazon-ebs: 16650K .......... .......... .......... .......... .......... 65%  209M 1s
+1493958593,,ui,message,    amazon-ebs: 16700K .......... .......... .......... .......... .......... 65%  229M 1s
+1493958593,,ui,message,    amazon-ebs: 16750K .......... .......... .......... .......... .......... 65%  224M 0s
+1493958593,,ui,message,    amazon-ebs: 16800K .......... .......... .......... .......... .......... 65% 2.53M 1s
+1493958593,,ui,message,    amazon-ebs: 16850K .......... .......... .......... .......... .......... 66% 2.66M 1s
+1493958593,,ui,message,    amazon-ebs: 16900K .......... .......... .......... .......... .......... 66% 22.9M 1s
+1493958593,,ui,message,    amazon-ebs: 16950K .......... .......... .......... .......... .......... 66% 2.57M 1s
+1493958593,,ui,message,    amazon-ebs: 17000K .......... .......... .......... .......... .......... 66% 29.0M 1s
+1493958593,,ui,message,    amazon-ebs: 17050K .......... .......... .......... .......... .......... 66% 2.67M 1s
+1493958593,,ui,message,    amazon-ebs: 17100K .......... .......... .......... .......... .......... 67% 45.3M 1s
+1493958593,,ui,message,    amazon-ebs: 17150K .......... .......... .......... .......... .......... 67% 2.66M 1s
+1493958594,,ui,message,    amazon-ebs: 17200K .......... .......... .......... .......... .......... 67% 43.8M 1s
+1493958594,,ui,message,    amazon-ebs: 17250K .......... .......... .......... .......... .......... 67% 34.2M 1s
+1493958594,,ui,message,    amazon-ebs: 17300K .......... .......... .......... .......... .......... 67% 2.73M 1s
+1493958594,,ui,message,    amazon-ebs: 17350K .......... .......... .......... .......... .......... 68%  432M 1s
+1493958594,,ui,message,    amazon-ebs: 17400K .......... .......... .......... .......... .......... 68%  306M 0s
+1493958594,,ui,message,    amazon-ebs: 17450K .......... .......... .......... .......... .......... 68%  489M 0s
+1493958594,,ui,message,    amazon-ebs: 17500K .......... .......... .......... .......... .......... 68%  469M 0s
+1493958594,,ui,message,    amazon-ebs: 17550K .......... .......... .......... .......... .......... 68%  190M 0s
+1493958594,,ui,message,    amazon-ebs: 17600K .......... .......... .......... .......... .......... 69%  188M 0s
+1493958594,,ui,message,    amazon-ebs: 17650K .......... .......... .......... .......... .......... 69%  186M 0s
+1493958594,,ui,message,    amazon-ebs: 17700K .......... .......... .......... .......... .......... 69%  151M 0s
+1493958594,,ui,message,    amazon-ebs: 17750K .......... .......... .......... .......... .......... 69%  176M 0s
+1493958594,,ui,message,    amazon-ebs: 17800K .......... .......... .......... .......... .......... 69%  160M 0s
+1493958594,,ui,message,    amazon-ebs: 17850K .......... .......... .......... .......... .......... 70%  183M 0s
+1493958594,,ui,message,    amazon-ebs: 17900K .......... .......... .......... .......... .......... 70%  217M 0s
+1493958594,,ui,message,    amazon-ebs: 17950K .......... .......... .......... .......... .......... 70%  234M 0s
+1493958594,,ui,message,    amazon-ebs: 18000K .......... .......... .......... .......... .......... 70% 2.21M 0s
+1493958594,,ui,message,    amazon-ebs: 18050K .......... .......... .......... .......... .......... 70% 40.5M 0s
+1493958594,,ui,message,    amazon-ebs: 18100K .......... .......... .......... .......... .......... 70% 2.66M 0s
+1493958594,,ui,message,    amazon-ebs: 18150K .......... .......... .......... .......... .......... 71%  289M 0s
+1493958594,,ui,message,    amazon-ebs: 18200K .......... .......... .......... .......... .......... 71%  367M 0s
+1493958594,,ui,message,    amazon-ebs: 18250K .......... .......... .......... .......... .......... 71%  419M 0s
+1493958594,,ui,message,    amazon-ebs: 18300K .......... .......... .......... .......... .......... 71%  415M 0s
+1493958594,,ui,message,    amazon-ebs: 18350K .......... .......... .......... .......... .......... 71%  303M 0s
+1493958594,,ui,message,    amazon-ebs: 18400K .......... .......... .......... .......... .......... 72%  141M 0s
+1493958594,,ui,message,    amazon-ebs: 18450K .......... .......... .......... .......... .......... 72%  183M 0s
+1493958594,,ui,message,    amazon-ebs: 18500K .......... .......... .......... .......... .......... 72%  176M 0s
+1493958594,,ui,message,    amazon-ebs: 18550K .......... .......... .......... .......... .......... 72%  179M 0s
+1493958594,,ui,message,    amazon-ebs: 18600K .......... .......... .......... .......... .......... 72%  168M 0s
+1493958594,,ui,message,    amazon-ebs: 18650K .......... .......... .......... .......... .......... 73%  216M 0s
+1493958594,,ui,message,    amazon-ebs: 18700K .......... .......... .......... .......... .......... 73%  233M 0s
+1493958594,,ui,message,    amazon-ebs: 18750K .......... .......... .......... .......... .......... 73%  197M 0s
+1493958594,,ui,message,    amazon-ebs: 18800K .......... .......... .......... .......... .......... 73%  190M 0s
+1493958594,,ui,message,    amazon-ebs: 18850K .......... .......... .......... .......... .......... 73% 2.67M 0s
+1493958594,,ui,message,    amazon-ebs: 18900K .......... .......... .......... .......... .......... 74% 34.7M 0s
+1493958594,,ui,message,    amazon-ebs: 18950K .......... .......... .......... .......... .......... 74% 2.73M 0s
+1493958594,,ui,message,    amazon-ebs: 19000K .......... .......... .......... .......... .......... 74%  339M 0s
+1493958594,,ui,message,    amazon-ebs: 19050K .......... .......... .......... .......... .......... 74%  485M 0s
+1493958594,,ui,message,    amazon-ebs: 19100K .......... .......... .......... .......... .......... 74%  493M 0s
+1493958594,,ui,message,    amazon-ebs: 19150K .......... .......... .......... .......... .......... 75%  302M 0s
+1493958594,,ui,message,    amazon-ebs: 19200K .......... .......... .......... .......... .......... 75%  186M 0s
+1493958594,,ui,message,    amazon-ebs: 19250K .......... .......... .......... .......... .......... 75%  179M 0s
+1493958594,,ui,message,    amazon-ebs: 19300K .......... .......... .......... .......... .......... 75%  162M 0s
+1493958594,,ui,message,    amazon-ebs: 19350K .......... .......... .......... .......... .......... 75%  182M 0s
+1493958594,,ui,message,    amazon-ebs: 19400K .......... .......... .......... .......... .......... 76%  193M 0s
+1493958594,,ui,message,    amazon-ebs: 19450K .......... .......... .......... .......... .......... 76%  216M 0s
+1493958594,,ui,message,    amazon-ebs: 19500K .......... .......... .......... .......... .......... 76%  223M 0s
+1493958594,,ui,message,    amazon-ebs: 19550K .......... .......... .......... .......... .......... 76%  208M 0s
+1493958594,,ui,message,    amazon-ebs: 19600K .......... .......... .......... .......... .......... 76%  164M 0s
+1493958594,,ui,message,    amazon-ebs: 19650K .......... .......... .......... .......... .......... 77% 2.76M 0s
+1493958594,,ui,message,    amazon-ebs: 19700K .......... .......... .......... .......... .......... 77% 37.9M 0s
+1493958594,,ui,message,    amazon-ebs: 19750K .......... .......... .......... .......... .......... 77% 40.4M 0s
+1493958594,,ui,message,    amazon-ebs: 19800K .......... .......... .......... .......... .......... 77% 2.80M 0s
+1493958594,,ui,message,    amazon-ebs: 19850K .......... .......... .......... .......... .......... 77%  385M 0s
+1493958594,,ui,message,    amazon-ebs: 19900K .......... .......... .......... .......... .......... 78%  438M 0s
+1493958594,,ui,message,    amazon-ebs: 19950K .......... .......... .......... .......... .......... 78%  461M 0s
+1493958594,,ui,message,    amazon-ebs: 20000K .......... .......... .......... .......... .......... 78%  338M 0s
+1493958594,,ui,message,    amazon-ebs: 20050K .......... .......... .......... .......... .......... 78%  214M 0s
+1493958594,,ui,message,    amazon-ebs: 20100K .......... .......... .......... .......... .......... 78%  202M 0s
+1493958594,,ui,message,    amazon-ebs: 20150K .......... .......... .......... .......... .......... 78%  172M 0s
+1493958594,,ui,message,    amazon-ebs: 20200K .......... .......... .......... .......... .......... 79%  146M 0s
+1493958594,,ui,message,    amazon-ebs: 20250K .......... .......... .......... .......... .......... 79%  202M 0s
+1493958594,,ui,message,    amazon-ebs: 20300K .......... .......... .......... .......... .......... 79%  236M 0s
+1493958594,,ui,message,    amazon-ebs: 20350K .......... .......... .......... .......... .......... 79%  202M 0s
+1493958594,,ui,message,    amazon-ebs: 20400K .......... .......... .......... .......... .......... 79%  180M 0s
+1493958594,,ui,message,    amazon-ebs: 20450K .......... .......... .......... .......... .......... 80%  227M 0s
+1493958594,,ui,message,    amazon-ebs: 20500K .......... .......... .......... .......... .......... 80%  216M 0s
+1493958594,,ui,message,    amazon-ebs: 20550K .......... .......... .......... .......... .......... 80% 2.82M 0s
+1493958594,,ui,message,    amazon-ebs: 20600K .......... .......... .......... .......... .......... 80% 63.1M 0s
+1493958594,,ui,message,    amazon-ebs: 20650K .......... .......... .......... .......... .......... 80% 74.9M 0s
+1493958594,,ui,message,    amazon-ebs: 20700K .......... .......... .......... .......... .......... 81% 75.5M 0s
+1493958594,,ui,message,    amazon-ebs: 20750K .......... .......... .......... .......... .......... 81% 75.7M 0s
+1493958594,,ui,message,    amazon-ebs: 20800K .......... .......... .......... .......... .......... 81% 2.91M 0s
+1493958594,,ui,message,    amazon-ebs: 20850K .......... .......... .......... .......... .......... 81%  405M 0s
+1493958594,,ui,message,    amazon-ebs: 20900K .......... .......... .......... .......... .......... 81%  370M 0s
+1493958594,,ui,message,    amazon-ebs: 20950K .......... .......... .......... .......... .......... 82%  425M 0s
+1493958594,,ui,message,    amazon-ebs: 21000K .......... .......... .......... .......... .......... 82%  353M 0s
+1493958594,,ui,message,    amazon-ebs: 21050K .......... .......... .......... .......... .......... 82%  450M 0s
+1493958594,,ui,message,    amazon-ebs: 21100K .......... .......... .......... .......... .......... 82%  208M 0s
+1493958594,,ui,message,    amazon-ebs: 21150K .......... .......... .......... .......... .......... 82%  171M 0s
+1493958594,,ui,message,    amazon-ebs: 21200K .......... .......... .......... .......... .......... 83%  144M 0s
+1493958594,,ui,message,    amazon-ebs: 21250K .......... .......... .......... .......... .......... 83%  167M 0s
+1493958594,,ui,message,    amazon-ebs: 21300K .......... .......... .......... .......... .......... 83%  174M 0s
+1493958594,,ui,message,    amazon-ebs: 21350K .......... .......... .......... .......... .......... 83%  162M 0s
+1493958594,,ui,message,    amazon-ebs: 21400K .......... .......... .......... .......... .......... 83%  149M 0s
+1493958594,,ui,message,    amazon-ebs: 21450K .......... .......... .......... .......... .......... 84%  226M 0s
+1493958594,,ui,message,    amazon-ebs: 21500K .......... .......... .......... .......... .......... 84%  212M 0s
+1493958594,,ui,message,    amazon-ebs: 21550K .......... .......... .......... .......... .......... 84%  217M 0s
+1493958594,,ui,message,    amazon-ebs: 21600K .......... .......... .......... .......... .......... 84%  235M 0s
+1493958594,,ui,message,    amazon-ebs: 21650K .......... .......... .......... .......... .......... 84%  244M 0s
+1493958594,,ui,message,    amazon-ebs: 21700K .......... .......... .......... .......... .......... 85% 2.87M 0s
+1493958594,,ui,message,    amazon-ebs: 21750K .......... .......... .......... .......... .......... 85% 70.5M 0s
+1493958594,,ui,message,    amazon-ebs: 21800K .......... .......... .......... .......... .......... 85% 59.6M 0s
+1493958594,,ui,message,    amazon-ebs: 21850K .......... .......... .......... .......... .......... 85% 61.5M 0s
+1493958594,,ui,message,    amazon-ebs: 21900K .......... .......... .......... .......... .......... 85% 54.9M 0s
+1493958594,,ui,message,    amazon-ebs: 21950K .......... .......... .......... .......... .......... 86% 2.82M 0s
+1493958594,,ui,message,    amazon-ebs: 22000K .......... .......... .......... .......... .......... 86% 49.9M 0s
+1493958594,,ui,message,    amazon-ebs: 22050K .......... .......... .......... .......... .......... 86% 53.0M 0s
+1493958594,,ui,message,    amazon-ebs: 22100K .......... .......... .......... .......... .......... 86% 50.8M 0s
+1493958594,,ui,message,    amazon-ebs: 22150K .......... .......... .......... .......... .......... 86% 2.93M 0s
+1493958594,,ui,message,    amazon-ebs: 22200K .......... .......... .......... .......... .......... 87%  351M 0s
+1493958594,,ui,message,    amazon-ebs: 22250K .......... .......... .......... .......... .......... 87%  405M 0s
+1493958594,,ui,message,    amazon-ebs: 22300K .......... .......... .......... .......... .......... 87%  440M 0s
+1493958594,,ui,message,    amazon-ebs: 22350K .......... .......... .......... .......... .......... 87%  326M 0s
+1493958594,,ui,message,    amazon-ebs: 22400K .......... .......... .......... .......... .......... 87%  256M 0s
+1493958594,,ui,message,    amazon-ebs: 22450K .......... .......... .......... .......... .......... 87%  416M 0s
+1493958594,,ui,message,    amazon-ebs: 22500K .......... .......... .......... .......... .......... 88%  374M 0s
+1493958594,,ui,message,    amazon-ebs: 22550K .......... .......... .......... .......... .......... 88%  426M 0s
+1493958594,,ui,message,    amazon-ebs: 22600K .......... .......... .......... .......... .......... 88%  364M 0s
+1493958594,,ui,message,    amazon-ebs: 22650K .......... .......... .......... .......... .......... 88%  289M 0s
+1493958594,,ui,message,    amazon-ebs: 22700K .......... .......... .......... .......... .......... 88%  416M 0s
+1493958594,,ui,message,    amazon-ebs: 22750K .......... .......... .......... .......... .......... 89%  431M 0s
+1493958594,,ui,message,    amazon-ebs: 22800K .......... .......... .......... .......... .......... 89%  407M 0s
+1493958594,,ui,message,    amazon-ebs: 22850K .......... .......... .......... .......... .......... 89%  438M 0s
+1493958594,,ui,message,    amazon-ebs: 22900K .......... .......... .......... .......... .......... 89%  430M 0s
+1493958594,,ui,message,    amazon-ebs: 22950K .......... .......... .......... .......... .......... 89%  426M 0s
+1493958594,,ui,message,    amazon-ebs: 23000K .......... .......... .......... .......... .......... 90%  348M 0s
+1493958594,,ui,message,    amazon-ebs: 23050K .......... .......... .......... .......... .......... 90%  429M 0s
+1493958594,,ui,message,    amazon-ebs: 23100K .......... .......... .......... .......... .......... 90%  431M 0s
+1493958594,,ui,message,    amazon-ebs: 23150K .......... .......... .......... .......... .......... 90%  408M 0s
+1493958594,,ui,message,    amazon-ebs: 23200K .......... .......... .......... .......... .......... 90%  379M 0s
+1493958594,,ui,message,    amazon-ebs: 23250K .......... .......... .......... .......... .......... 91%  437M 0s
+1493958594,,ui,message,    amazon-ebs: 23300K .......... .......... .......... .......... .......... 91%  444M 0s
+1493958594,,ui,message,    amazon-ebs: 23350K .......... .......... .......... .......... .......... 91%  399M 0s
+1493958594,,ui,message,    amazon-ebs: 23400K .......... .......... .......... .......... .......... 91%  340M 0s
+1493958594,,ui,message,    amazon-ebs: 23450K .......... .......... .......... .......... .......... 91%  427M 0s
+1493958594,,ui,message,    amazon-ebs: 23500K .......... .......... .......... .......... .......... 92%  426M 0s
+1493958594,,ui,message,    amazon-ebs: 23550K .......... .......... .......... .......... .......... 92%  436M 0s
+1493958594,,ui,message,    amazon-ebs: 23600K .......... .......... .......... .......... .......... 92%  381M 0s
+1493958594,,ui,message,    amazon-ebs: 23650K .......... .......... .......... .......... .......... 92% 2.92M 0s
+1493958594,,ui,message,    amazon-ebs: 23700K .......... .......... .......... .......... .......... 92% 66.6M 0s
+1493958594,,ui,message,    amazon-ebs: 23750K .......... .......... .......... .......... .......... 93% 74.0M 0s
+1493958594,,ui,message,    amazon-ebs: 23800K .......... .......... .......... .......... .......... 93% 64.1M 0s
+1493958594,,ui,message,    amazon-ebs: 23850K .......... .......... .......... .......... .......... 93% 74.9M 0s
+1493958594,,ui,message,    amazon-ebs: 23900K .......... .......... .......... .......... .......... 93% 74.5M 0s
+1493958594,,ui,message,    amazon-ebs: 23950K .......... .......... .......... .......... .......... 93% 2.83M 0s
+1493958594,,ui,message,    amazon-ebs: 24000K .......... .......... .......... .......... .......... 94% 65.6M 0s
+1493958594,,ui,message,    amazon-ebs: 24050K .......... .......... .......... .......... .......... 94% 74.0M 0s
+1493958594,,ui,message,    amazon-ebs: 24100K .......... .......... .......... .......... .......... 94% 74.8M 0s
+1493958594,,ui,message,    amazon-ebs: 24150K .......... .......... .......... .......... .......... 94% 74.0M 0s
+1493958594,,ui,message,    amazon-ebs: Archive:  dropwizard-example-26.zip
+1493958594,,ui,message,    amazon-ebs: 24200K .......... .......... .......... .......... .......... 94% 2.88M 0s
+1493958594,,ui,message,    amazon-ebs: 24250K .......... .......... .......... .......... .......... 95%  262M 0s
+1493958594,,ui,message,    amazon-ebs: 24300K .......... .......... .......... .......... .......... 95%  387M 0s
+1493958594,,ui,message,    amazon-ebs: 24350K .......... .......... .......... .......... .......... 95%  432M 0s
+1493958594,,ui,message,    amazon-ebs: 24400K .......... .......... .......... .......... .......... 95%  395M 0s
+1493958594,,ui,message,    amazon-ebs: 24450K .......... .......... .......... .......... .......... 95%  419M 0s
+1493958594,,ui,message,    amazon-ebs: 24500K .......... .......... .......... .......... .......... 96%  423M 0s
+1493958594,,ui,message,    amazon-ebs: 24550K .......... .......... .......... .......... .......... 96%  400M 0s
+1493958594,,ui,message,    amazon-ebs: 24600K .......... .......... .......... .......... .......... 96%  319M 0s
+1493958594,,ui,message,    amazon-ebs: 24650K .......... .......... .......... .......... .......... 96%  406M 0s
+1493958594,,ui,message,    amazon-ebs: 24700K .......... .......... .......... .......... .......... 96%  378M 0s
+1493958594,,ui,message,    amazon-ebs: 24750K .......... .......... .......... .......... .......... 96%  356M 0s
+1493958594,,ui,message,    amazon-ebs: 24800K .......... .......... .......... .......... .......... 97%  356M 0s
+1493958594,,ui,message,    amazon-ebs: 24850K .......... .......... .......... .......... .......... 97%  400M 0s
+1493958594,,ui,message,    amazon-ebs: 24900K .......... .......... .......... .......... .......... 97%  388M 0s
+1493958594,,ui,message,    amazon-ebs: 24950K .......... .......... .......... .......... .......... 97%  379M 0s
+1493958594,,ui,message,    amazon-ebs: 25000K .......... .......... .......... .......... .......... 97%  311M 0s
+1493958594,,ui,message,    amazon-ebs: 25050K .......... .......... .......... .......... .......... 98%  380M 0s
+1493958594,,ui,message,    amazon-ebs: 25100K .......... .......... .......... .......... .......... 98%  389M 0s
+1493958594,,ui,message,    amazon-ebs: 25150K .......... .......... .......... .......... .......... 98%  407M 0s
+1493958594,,ui,message,    amazon-ebs: 25200K .......... .......... .......... .......... .......... 98%  346M 0s
+1493958594,,ui,message,    amazon-ebs: 25250K .......... .......... .......... .......... .......... 98%  351M 0s
+1493958594,,ui,message,    amazon-ebs: 25300K .......... .......... .......... .......... .......... 99%  393M 0s
+1493958594,,ui,message,    amazon-ebs: 25350K .......... .......... .......... .......... .......... 99%  353M 0s
+1493958594,,ui,message,    amazon-ebs: 25400K .......... .......... .......... .......... .......... 99%  304M 0s
+1493958594,,ui,message,    amazon-ebs: 25450K .......... .......... .......... .......... .......... 99%  343M 0s
+1493958594,,ui,message,    amazon-ebs: 25500K .......... .......... .......... .......... .......... 99%  376M 0s
+1493958594,,ui,message,    amazon-ebs: 25550K .......... .......... .                               100%  356M=1.4s
+1493958594,,ui,message,    amazon-ebs:
+1493958594,,ui,message,    amazon-ebs: 2017-05-05 04:29:53 (18.3 MB/s) - ‘/opt/dropwizard-example/dropwizard-example-26.zip’ saved [26184791/26184791]
+1493958594,,ui,message,    amazon-ebs:
+1493958595,,ui,message,    amazon-ebs: inflating: target/dropwizard-example-1.2.0-SNAPSHOT.jar
+1493958595,,ui,message,    amazon-ebs: inflating: example.yml
+1493958595,,ui,message,    amazon-ebs: inflating: dropwizard-init-script
+1493958596,,ui,message,    amazon-ebs: sudo: cd /opt/dropwizard-example; java -jar /opt/dropwizard-example/dropwizard-example.jar server /opt/dropwizard-example/example.yml > /dev/null &: command not found
+1493958596,,ui,message,    amazon-ebs: Starting Dropwizard Application
+1493958596,,ui,say,==> amazon-ebs: Stopping the source instance...
+1493958597,,ui,say,==> amazon-ebs: Waiting for the instance to stop...
+1493958648,,ui,say,==> amazon-ebs: Creating the AMI: dropwizard-example-1493958483
+1493958648,,ui,message,    amazon-ebs: AMI: ami-fe424e98
+1493958648,,ui,say,==> amazon-ebs: Waiting for AMI to become ready...
+1493958752,,ui,say,==> amazon-ebs: Terminating the source AWS instance...
+1493958759,,ui,say,==> amazon-ebs: Cleaning up any extra volumes...
+1493958760,,ui,say,==> amazon-ebs: No volumes to clean up%!(PACKER_COMMA) skipping
+1493958760,,ui,say,==> amazon-ebs: Deleting temporary security group...
+1493958760,,ui,say,==> amazon-ebs: Deleting temporary keypair...
+1493958760,,ui,say,Build 'amazon-ebs' finished.
+1493958760,,ui,say,\n==> Builds finished. The artifacts of successful builds are:
+1493958760,amazon-ebs,artifact-count,1
+1493958760,amazon-ebs,artifact,0,builder-id,mitchellh.amazonebs
+1493958760,amazon-ebs,artifact,0,id,eu-west-1:ami-fe424e98
+1493958760,amazon-ebs,artifact,0,string,AMIs were created:\n\neu-west-1: ami-fe424e98
+1493958760,amazon-ebs,artifact,0,files-count,0
+1493958760,amazon-ebs,artifact,0,end
+1493958760,,ui,say,--> amazon-ebs: AMIs were created:\n\neu-west-1: ami-fe424e98
